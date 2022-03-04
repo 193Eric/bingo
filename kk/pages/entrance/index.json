@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "page-status": "../../packages/racoonjs/components/customer/components/PageStatus/index",
+        "custom-tab-bar": "../../@shared/components/tabBar/index",
+        "account-login": "../../packages/racoonjs/components/customer/components/AccountLogin/index",
+        "modal": "../../packages/racoonjs/ui/Modal/index"
+    },
+    "navigationBarTitleText": "丰e足食"
+}

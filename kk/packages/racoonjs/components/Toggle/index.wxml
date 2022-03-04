@@ -1,0 +1,4 @@
+<block wx:if="{{$taroCompReady}}">
+    <slot wx:if="{{isShow}}"></slot>
+    <view wx:else></view>
+</block>

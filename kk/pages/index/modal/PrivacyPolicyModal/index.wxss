@@ -1,0 +1,48 @@
+.privacy_policy_window {
+    width: 610rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    padding: 12rpx 60rpx 40rpx;
+}
+
+.privacy_policy_window .u_title {
+    font-size: 36rpx;
+    color: #3a3a3a;
+    text-align: center;
+    line-height: 100rpx;
+    margin-bottom: 20rpx;
+}
+
+.privacy_policy_window .u_content {
+    font-size: 28rpx;
+    color: #3a3a3a;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 56rpx;
+}
+
+.privacy_policy_window .confirm_btn {
+    background: #fabe39;
+    border-radius: 44rpx;
+    text-align: center;
+    line-height: 88rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.privacy_policy_window .why_word {
+    color: #fabe39;
+    text-decoration: underline;
+}
+
+.privacy_policy_window .disargee {
+    text-align: center;
+    text-decoration: underline;
+    color: #3a3a3a;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+}
+
+.privacy-policy-modal.fe-modal .c-mask {
+    background: rgba(0,0,0,.88);
+}

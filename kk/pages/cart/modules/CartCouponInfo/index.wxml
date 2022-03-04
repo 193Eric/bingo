@@ -1,0 +1,24 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!$cart}}"></view>
+    <view class="p-coupon-remind clearfix" wx:else>
+        <text class="coupon-label">优惠券</text>
+        <view bindtap="anonymousFunc0" class="p-coupon-right">
+            <block wx:if="{{coupon}}">
+                <text wx:if="{{coupon.discount}}">{{coupon.discount}}折券</text>
+                <text wx:else>满{{coupon.orderAmount}}减{{coupon.price}}券</text>
+            </block>
+            <text class="gray-word" wx:elif="{{currentCouponData.isSelectByUser&&coupon===null}}">不使用优惠券</text>
+            <text class="gray-word" wx:elif="{{unsatisfiedCoupon===null&&satisfyCoupon===null&&!currentCouponData.coupon}}">暂无可用优惠券</text>
+            <block wx:elif="{{unsatisfiedCoupon}}">
+                <view class="price-line" wx:if="{{unsatisfiedCoupon.discount}}">还差{{' '}}
+                            <price compid="{{$compid__223}}"></price>可打{{unsatisfiedCoupon.discount}}折</view>
+                <view class="price-line" wx:else>还差{{' '}}
+                            <price compid="{{$compid__224}}"></price>可减
+                            <price compid="{{$compid__225}}"></price>
+                </view>
+            </block>
+            <text class="gray-word" wx:else>暂无可用优惠券</text>
+            <text class="right-arrow-icon"></text>
+        </view>
+    </view>
+</block>

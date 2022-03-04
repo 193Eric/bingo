@@ -1,0 +1,51 @@
+<template name="renderHeaderEntry">
+    <block wx:if="{{IS_SCHOOL_SHELF}}">
+        <view bindtap="clickHeadPersonal" class="span personal_center" data-e-tap-so="this"></view>
+        <view bindtap="clickHeadContact" class="span contact_admin" data-e-tap-so="this"></view>
+    </block>
+    <block wx:else>
+        <view class="span header-personal">
+            <view bindtap="clickHeadPersonal" class="{{'span personal_center '+(showUnreadPoint?'unread':'')}}" data-e-tap-so="this"></view>
+            <view class="u">我的</view>
+        </view>
+        <view class="span header-personal">
+            <view bindtap="clickHeadContact" class="span contact_admin" data-e-tap-so="this"></view>
+            <view class="u">资质</view>
+        </view>
+    </block>
+</template>
+<template name="renderAdvContent">
+    <view wx:if="{{adv1_2==null}}"></view>
+    <view bindtap="clickAdv" class="span ad1_2" data-e-tap-a-a="{{adv1_2}}" data-e-tap-so="this" wx:else>
+        <image class="img" src="{{adv1_2.imgUrl}}"></image>
+    </view>
+</template>
+<template name="renderGreetings">
+    <view bindtap="clickStoreAddress" class="store_address" data-e-tap-so="this" wx:if="{{shelfAddressName}}">{{shelfAddressName}}</view>
+    <view wx:elif="{{styleTemplateId==2}}">
+        <image class="member-birthday-theme2" src="{{GIF_MEMBER_BIRTHDAY}}"></image>
+    </view>
+    <view class="greeting" wx:elif="{{greeting}}">{{greeting}}</view>
+    <view class="slogan" wx:else></view>
+</template>
+<template name="renderLeftContent">
+    <view class="top_left_box" wx:if="{{IS_SCHOOL_SHELF}}">
+        <view bindtap="clickHeadPLocation" class="top_left_content" data-e-tap-so="this">
+            <view bindtap="clickStoreAddress" class="store_address" data-e-tap-so="this" wx:if="{{shelfAddressName!==null}}">{{shelfAddressName}}</view>
+        </view>
+    </view>
+    <view class="top_left_box" wx:else>
+        <view class="top_left_content">
+            <template is="renderGreetings" data="{{...anonymousState__temp}}"></template>
+        </view>
+    </view>
+</template>
+<view class="{{anonymousState__temp5}}" wx:if="{{$taroCompReady}}">
+    <view class="top_wrapper">
+        <template is="renderLeftContent" data="{{...anonymousState__temp2}}"></template>
+        <view class="top_right_box clearfix">
+            <template is="renderHeaderEntry" data="{{...anonymousState__temp3}}"></template>
+            <template is="renderAdvContent" data="{{...anonymousState__temp4}}"></template>
+        </view>
+    </view>
+</view>

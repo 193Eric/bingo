@@ -1,0 +1,87 @@
+.pay-success-collect-card {
+    background: url(https://qn-cdn-pic.feng1.com/theme_pic-20201030-079ef5b14819b7087300788241249b3d) no-repeat;
+    background-size: contain;
+    width: 724rpx;
+    height: 586rpx;
+    margin: 0 auto;
+    padding: 150rpx 10rpx 10rpx;
+}
+
+.pay-success-collect-card .text {
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 26rpx;
+}
+
+.pay-success-collect-card .text .span {
+    font-weight: 700;
+    font-size: 32rpx;
+    color: #ffe99c;
+    padding: 0 8rpx;
+}
+
+.pay-success-collect-card .cards {
+    margin-bottom: 20rpx;
+    height: 220rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.pay-success-collect-card .cards .cards__item {
+    position: relative;
+    width: 164rpx;
+    height: 220rpx;
+    margin-right: 20rpx;
+}
+
+.pay-success-collect-card .cards .cards__item image,.pay-success-collect-card .cards .cards__item img {
+    width: 100%;
+    height: 100%;
+}
+
+.pay-success-collect-card .cards .cards__item:last-child {
+    margin-right: 0;
+}
+
+.pay-success-collect-card .cards .cards__item .count,.pay-success-collect-card .cards .cards__item .mark {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.pay-success-collect-card .cards .cards__item .mark {
+    width: 32rpx;
+    height: 32rpx;
+    background: red;
+}
+
+.pay-success-collect-card .cards .cards__item .count {
+    left: -12rpx;
+    top: -12rpx;
+    z-index: 11;
+    width: 40rpx;
+    height: 40rpx;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f7836f),to(#de372c));
+    background-image: linear-gradient(180deg,#f7836f 0,#de372c 100%);
+    border: 4rpx solid #fff;
+}
+
+.pay-success-collect-card .button {
+    background: url(https://qn-cdn-pic.feng1.com/theme_pic-20201030-3b43cbd130d41a2652eef0bfcacb8dc4) no-repeat;
+    background-size: contain;
+    font-weight: 700;
+    width: 290rpx;
+    height: 92rpx;
+    line-height: 72rpx;
+    font-family: PingFangSC-Semibold;
+    font-size: 28rpx;
+    color: #b6151b;
+    text-align: center;
+    margin: 0 auto;
+}

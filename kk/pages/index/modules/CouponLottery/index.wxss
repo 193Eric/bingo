@@ -1,0 +1,91 @@
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.coupon-lottery {
+    margin-left: -24rpx;
+    margin-right: -24rpx;
+    position: relative;
+    width: 750rpx;
+    height: 200rpx;
+    margin-top: 32rpx;
+}
+
+.coupon-lottery .lottery-drawing {
+    width: 100%;
+    height: 200rpx;
+}
+
+.coupon-lottery .hidden {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 19998rpx;
+}
+
+.coupon-lottery .click-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 10rpx;
+    top: 10rpx;
+}
+
+.coupon-lottery .discount-area {
+    position: absolute;
+    width: 70rpx;
+    height: 80rpx;
+    overflow: hidden;
+    top: 50%;
+    left: 316.4rpx;
+    opacity: .75;
+    transform: translateY(-50%) translate3d(0,0,0);
+    margin-top: -8rpx;
+    backface-visibility: hidden;
+}
+
+.coupon-lottery .discount-area .discount-item {
+    width: 70rpx;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 66rpx;
+    color: #f11e01;
+    letter-spacing: 0;
+}
+
+.coupon-lottery .discount-coupon-info {
+    position: absolute;
+    left: 86.4rpx;
+    bottom: 36rpx;
+    font-size: 20rpx;
+    color: #fff2c5;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.coupon-lottery .discount-coupon-info.faded {
+    animation: fadeIn 1s;
+}
+
+.lottery-no-draw {
+    width: 100%;
+}

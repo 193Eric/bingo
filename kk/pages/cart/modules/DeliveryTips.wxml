@@ -1,0 +1,8 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!shelf}}"></view>
+    <view class="c-delivery-tips" wx:else>
+        <text class="c-delivery-tips__text">
+            <text class="price">{{startDeliveryPrice}}</text>元起送, 还差<text class="price">{{diffPrice}}</text>元可免<text class="price">{{deliveryPrice}}</text>元配送费</text>
+        <button bindtap="back" data-e-tap-so="this">去凑单</button>
+    </view>
+</block>

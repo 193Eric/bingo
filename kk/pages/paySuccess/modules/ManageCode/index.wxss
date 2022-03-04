@@ -1,0 +1,107 @@
+.campus-shelf-container {
+    padding: 36rpx 10rpx 36rpx 36rpx;
+    box-shadow: 0 0 12rpx 0 rgba(0,0,0,.05);
+    border-radius: 16rpx;
+    display: flex;
+    margin: 0 24rpx 30rpx;
+    background-color: #fff;
+}
+
+.campus-shelf-container .icon {
+    width: 28rpx;
+    height: 28rpx;
+    max-width: 28rpx;
+    vertical-align: middle;
+    margin-right: 8rpx;
+    position: relative;
+    top: -4rpx;
+}
+
+.campus-shelf-container .icon.icon2 {
+    max-width: 32rpx;
+    height: 18rpx;
+}
+
+.campus-shelf-container .p {
+    font-size: 24rpx;
+    color: #939393;
+}
+
+.campus-shelf-container .group-code-container {
+    flex: 0 auto;
+    flex-shrink: 0;
+    position: relative;
+    width: 200rpx;
+    text-align: center;
+}
+
+.campus-shelf-container .group-code-container .img {
+    width: 186rpx;
+    margin: 0 auto 20rpx;
+}
+
+.campus-shelf-container .group-code-container .img image,.campus-shelf-container .group-code-container .img img {
+    width: 100%;
+    height: 178rpx;
+}
+
+.campus-shelf-container .group-code-container .p {
+    white-space: nowrap;
+}
+
+.campus-shelf-container .campus-shelf-des {
+    flex: 1;
+    padding-left: 40rpx;
+    font-size: 26rpx;
+    text-align: left;
+}
+
+.campus-shelf-container .campus-shelf-des .campus-shelf-group-title {
+    font-weight: 700;
+    font-size: 26rpx;
+    line-height: 32rpx;
+    padding: 0 0 10rpx;
+    color: #333;
+    margin: 0 0 40rpx;
+}
+
+.campus-shelf-container .campus-shelf-des .campus-shelf-group-des {
+    font-family: PingFang-SC-Medium;
+    font-size: 22rpx;
+    line-height: 32rpx;
+    letter-spacing: 0.02rpx;
+    margin: 0;
+    color: #666;
+    font-weight: 300;
+}
+
+.campus-shelf-container .campus-shelf-group-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.campus-shelf-container .campus-shelf-group-list .item {
+    width: 50%;
+    flex-shrink: 0;
+    margin-bottom: 20rpx;
+}
+
+.campus-shelf-container .campus-shelf-group-list .icon-item {
+    display: inline-block;
+    width: 40rpx;
+}
+
+.campus-shelf-container .campus-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    width: 44rpx;
+    height: 46rpx;
+}
+
+.manager-code {
+    margin-bottom: 30rpx;
+}

@@ -1,0 +1,35 @@
+.userinfo_window {
+    width: 610rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    padding: 12rpx 60rpx 40rpx;
+}
+
+.userinfo_window .u_title {
+    font-size: 36rpx;
+    color: #3a3a3a;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.userinfo_window .u_content {
+    font-size: 28rpx;
+    color: #3a3a3a;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 36rpx;
+}
+
+.userinfo_window .confirm_btn {
+    background: #fabe39;
+    border-radius: 44rpx;
+    text-align: center;
+    line-height: 88rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.userinfo_window .why_word {
+    color: #fabe39;
+    text-decoration: underline;
+}

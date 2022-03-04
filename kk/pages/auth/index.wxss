@@ -1,0 +1,121 @@
+.auth-user-modal-content {
+    width: 584rpx;
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 40rpx;
+}
+
+.auth-user-modal-content .modal_title {
+    font-size: 36rpx;
+    text-align: center;
+    color: #4d4d4d;
+    padding: 0 32rpx 24rpx;
+    font-weight: 700;
+}
+
+.auth-user-modal-content .show_title {
+    font-size: 28rpx;
+    color: #333;
+    letter-spacing: 0.04rpx;
+    text-align: center;
+    line-height: 80rpx;
+    margin-bottom: 30rpx;
+}
+
+.auth_button {
+    background: #fabe39;
+    width: 100%;
+    line-height: 96rpx;
+    margin: 0 auto;
+    font-size: 34rpx;
+    color: #0d0d0d;
+    letter-spacing: 0;
+    text-align: center;
+    border-radius: 48rpx;
+}
+
+.cancel-container {
+    height: 100vh;
+}
+
+.cancel-container .cancel-content {
+    padding: 200rpx 20rpx 20rpx;
+    font-size: 28rpx;
+    color: #333;
+    text-align: center;
+}
+
+.cancel-container .cancel-content .auth-img {
+    width: 212rpx;
+    height: 212rpx;
+    margin-bottom: 24rpx;
+}
+
+.cancel-container .auth-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 48rpx 32rpx;
+}
+
+.home_container {
+    height: 100vh;
+    background: url(https://qn-cdn-pic.feng1.com/theme_pic-20200820-34a6336bcad0c430ae781b5f876df349?imageslim) no-repeat center 0;
+    background-size: 100% auto;
+}
+
+.home_container .shelf-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 360rpx;
+    margin: 0 auto;
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 60rpx;
+    color: #73380e;
+    background: #ffc647;
+    font-size: 26rpx;
+    text-align: center;
+    font-weight: 700;
+}
+
+.scan-code-btn {
+    position: absolute;
+    bottom: 60rpx;
+    left: 50%;
+    margin-left: -220rpx;
+    width: 442rpx;
+    height: 266rpx;
+}
+
+.scan-code-btn .img {
+    width: 100%;
+    height: 100%;
+    margin-left: -2rpx;
+}
+
+.scan-code-btn .text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 266rpx;
+    font-size: 28rpx;
+    color: #0d0d0d;
+    font-weight: 700;
+}
+
+.loading-container {
+    text-align: center;
+    padding-top: 120rpx;
+    font-size: 30rpx;
+}
+
+.loading-container image {
+    width: 140rpx;
+    height: 116rpx;
+}

@@ -1,0 +1,15 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!$cart}}"></view>
+    <view class="bottom-popup-product" wx:else>
+        <image class="bottom-popup-product__image" src="{{product.imagePath}}"></image>
+        <view class="bottom-popup-product__meta">
+            <view class="bottom-popup-product__name">{{product.shortName}}</view>
+            <view class="right_bot">
+                <price compid="{{$compid__271}}"></price>
+            </view>
+        </view>
+        <view class="bottom-popup-product__action">
+            <button bindtap="addProduct" class="add_btn" data-e-tap-so="this" disabled="{{number>=product.stockQuantity}}">去购买</button>
+        </view>
+    </view>
+</block>

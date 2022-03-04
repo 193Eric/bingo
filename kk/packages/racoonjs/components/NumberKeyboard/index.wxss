@@ -1,0 +1,152 @@
+@-webkit-keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100%) translateZ(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100%) translateZ(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+}
+
+.c-number-keyboard-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.c-number-keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all .3s linear;
+    transform: translateY(0);
+    user-select: none;
+    box-shadow: 0 -4rpx 2rpx rgba(0,0,0,.02);
+    z-index: 1000;
+    animation: fade-up;
+    animation-duration: .3s;
+    animation-timing-function: ease-in;
+}
+
+.c-number-keyboard.hidden {
+    opacity: 0;
+    transform: translateY(100%) translateZ(0);
+}
+
+.c-number-keyboard__header {
+    padding: 18rpx 30rpx;
+    background-color: #fff;
+    position: relative;
+    font-size: 34rpx;
+    text-align: right;
+}
+
+.c-number-keyboard__header:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 2rpx;
+    border-bottom: 2rpx solid #e5e5e5;
+    color: #e5e5e5;
+    transform-origin: 0 100%;
+    transform: scaleY(.5);
+}
+
+.c-number-keyboard__apply {
+    color: #1aad19;
+    text-decoration: none;
+}
+
+.c-number-keyboard__apply:active {
+    box-shadow: 2rpx 2rpx 10rpx 4rpx #cecece inset;
+}
+
+.c-number-keyboard__key {
+    float: left;
+    width: 33.33%;
+    height: 100rpx;
+    background: #fff;
+    text-align: center;
+    color: #000;
+    line-height: 100rpx;
+    box-sizing: border-box;
+    font-size: 36rpx;
+    position: relative;
+    list-style: none;
+    user-select: none;
+}
+
+.c-number-keyboard__key.point {
+    font-weight: 800;
+    font-family: PingFangSC-Medium;
+}
+
+.c-number-keyboard__key.active,.c-number-keyboard__key:active {
+    box-shadow: 2rpx 2rpx 10rpx 4rpx #cecece inset;
+}
+
+.c-number-keyboard__key.gray_bg {
+    background: #f8f8f8;
+}
+
+.c-number-keyboard__key.has_bot_border:before {
+    content: '';
+    width: 100%;
+    height: 2rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #f5f5f5;
+}
+
+.c-number-keyboard__key.has_right_border:after {
+    content: '';
+    width: 2rpx;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #f5f5f5;
+}
+
+.c-number-keyboard__key:last-child {
+    font-size: 28rpx;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #444;
+}
+
+.c-number-keyboard__key:last-child:before {
+    content: '';
+    background: url(https://qn-cdn-pic.feng1.com/company_logo-20191102-4010101cb039b83e3147b9417c1fe58c?imageslim) no-repeat;
+    background-size: contain;
+    width: 100rpx;
+    height: 44rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

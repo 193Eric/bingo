@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "bottom-sheet": "../../packages/racoonjs/components/customer/components/BottomSheet/index",
+        "coupon-product-item": "../../packages/racoonjs/components/customer/components/ProductItem/couponProductItem",
+        "load-more-scroll": "../../packages/racoonjs/components/customer/components/LoadMoreScroll/index",
+        "coupon-item": "./modules/CouponItem/index",
+        "toggle": "../../packages/racoonjs/components/Toggle/index",
+        "cart-icon": "../../packages/racoonjs/components/customer/components/CartBox/modules/CartIcon/index",
+        "fly-in-cart": "../../packages/racoonjs/components/customer/components/FlyInCart/index"
+    },
+    "navigationBarTitleText": "优惠券"
+}

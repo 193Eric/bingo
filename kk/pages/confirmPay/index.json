@@ -1,0 +1,17 @@
+{
+    "usingComponents": {
+        "dialog": "../../packages/racoonjs/ui/Dialog/index",
+        "price": "../../packages/racoonjs/components/customer/components/Price/index",
+        "toggle": "../../packages/racoonjs/components/Toggle/index",
+        "modal": "../../packages/racoonjs/ui/Modal/index",
+        "activity-config-portal": "../../packages/racoonjs/components/customer/components/ActivityConfigPortal/index",
+        "address-select": "./modules/AddressSelect/index",
+        "product-list": "./modules/ProductList/index",
+        "extra-price-info": "./modules/ExtraPriceInfo/index",
+        "register-modal": "../../packages/racoonjs/components/customer/components/RegisterModal/index",
+        "fixed-bottom": "./modules/FixedBottom/index",
+        "recommend-product-pop": "./modules/RecommendProductPop/index",
+        "check-box": "../../packages/racoonjs/components/CheckBox/index"
+    },
+    "navigationBarTitleText": "结算"
+}

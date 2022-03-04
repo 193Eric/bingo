@@ -1,0 +1,38 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!$cart}}"></view>
+    <view wx:elif="{{!fullOrderDiscountInfo}}"></view>
+    <view class="full_discount_info clearfix" wx:else>
+        <view class="h4">整单满减</view>
+        <view class="next_full_order_info block" wx:if="{{activity.activityRemainQuantity<=0}}">
+            <text class="pot">已抢完</text>
+        </view>
+        <block wx:else>
+            <block wx:if="{{needToSatisfyAmount>0}}">
+                <view bindtap="anonymousFunc0" class="full_discount_btn"></view>
+                <view class="next_full_order_info price-line">还差
+                                <price compid="{{$compid__226}}"></price>可减
+                                <price compid="{{$compid__227}}"></price>
+                </view>
+            </block>
+            <block wx:elif="{{isSatisfy&&isUsedFullOrderCut}}">
+                <view bindtap="anonymousFunc1" class="full_discount_btn active"></view>
+                <view>
+                    <view class="full_discount_price">-
+                                    <price compid="{{$compid__228}}"></price>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif="{{isSatisfy&&!isUsedFullOrderCut}}">
+                <view bindtap="anonymousFunc2" class="full_discount_btn"></view>
+                <view class="next_full_order_info price-line">使用整单满减立减{{' '}}
+                                <price compid="{{$compid__229}}"></price>
+                </view>
+            </block>
+            <view bindtap="anonymousFunc3" class="go_buy_btn" wx:else>去凑单</view>
+            <view class="activity_restrictions_info" wx:if="{{activityRestrictionsNum}}">
+                <text class="pot" wx:if="{{remark}}">{{remark}}</text>
+                <text class="pot" wx:else>限<text class="font_b">{{activityRestrictionsNum}}</text>笔，整点开抢</text>
+            </view>
+        </block>
+    </view>
+</block>

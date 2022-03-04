@@ -1,0 +1,6 @@
+<view class="absolute-error" wx:if="{{$taroCompReady}}">
+    <view class="error-img-container">
+        <image class="error-img" src="{{errorImage||ERROR_IMAGE}}"></image>
+    </view>
+    <view wx:for="{{lines}}" wx:for-index="_anonIdx2" wx:for-item="line">{{line}}</view>
+</view>

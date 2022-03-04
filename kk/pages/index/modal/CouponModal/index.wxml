@@ -1,0 +1,30 @@
+<template name="renderCouponItem">
+    <view class="list">
+        <view class="left">
+            <view class="font14 em title">{{childCouponName||couponName}}</view>
+            <view class="p font12 coupon-date" wx:if="{{validDayEndText}}">{{validDayEndText}}</view>
+            <view class="p font12" wx:else>有效期为{{validDay==0?1:validDay}}天</view>
+        </view>
+        <view class="right">
+            <view class="em font16" wx:if="{{discount}}">{{discount}}折</view>
+            <view class="em font16 price" wx:else>
+                <text class="unit">￥</text>
+                <text>{{price||childPrice||0}}</text>
+            </view>
+            <view class="font12 condition">满{{orderAmount||childOrderAmount||0}}元可用</view>
+        </view>
+    </view>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!$store}}"></view>
+    <view wx:elif="{{!(autoReceiveCoupon&&autoReceiveCoupon.length>0)}}"></view>
+    <modal compid="{{$compid__152}}" wx:else>
+        <view class="{{'coupon-modal '+typeClassName}}">
+            <image class="coupon-modal-header" mode="widthFix" src="{{headerImageUrl}}"></image>
+            <scroll-view class="coupon-package-list" id="couponPackageList" scrollY="{{true}}" style="{{anonymousState__temp3}}">
+                <template is="renderCouponItem" data="{{...item[$loopState__temp2]}}" wx:for="{{loopArray36}}" wx:for-index="_anonIdx2" wx:key="couponId"></template>
+            </scroll-view>
+            <view class="{{'p txc tip '+(isShowCouponRecord?'coupon-record-tips':'')}}" style="{{anonymousState__temp4}}">{{isShowCouponRecord?'':'红包已放入"优惠券"'}}</view>
+        </view>
+    </modal>
+</block>

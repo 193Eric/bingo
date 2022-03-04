@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "account-login": "../../../packages/racoonjs/components/customer/components/AccountLogin/index"
+    },
+    "navigationBarTitleText": "切换账号"
+}

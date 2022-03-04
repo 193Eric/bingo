@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "region-picker": "./components/RegionPicker/index"
+    },
+    "navigationBarTitleText": "地址编辑"
+}

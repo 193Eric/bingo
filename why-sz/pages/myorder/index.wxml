@@ -1,0 +1,97 @@
+<view class="myorder">
+    <view>
+        <view class="myorder-header">
+            <view>
+                <view class="myorder-header__logo">
+                    <view></view>
+                    <view></view>
+                    <view></view>
+                    <view></view>
+                    <open-data type="userAvatarUrl"></open-data>
+                </view>
+                <view class="myorder-header__title">
+                    <view>
+                        <open-data type="userNickName"></open-data>
+                    </view>
+                    <view wx:if="{{userInfo.phone}}">记得要好好吃饭哦～</view>
+                    <button bindgetphonenumber="getPhoneNumber" class="login-btn" openType="getPhoneNumber" wx:else>
+            登录查看订单>
+          </button>
+                </view>
+                <view bindtap="goHistory" class="myorder-header__list" wx:if="{{userInfo.phone}}">
+          历史记录
+        </view>
+            </view>
+        </view>
+        <view class="myorder-none" wx:if="{{orderList.length===0}}">
+            <image src="../../assets/images/order/order-none.png"></image>
+            <view>您还没有取号喔～</view>
+        </view>
+        <view wx:if="{{orderList.length>0}}">
+            <slider bind:swiperChange="onSwiperChange" class="myorder-slider" currentSwiperIndex="{{currentSwiperIndex}}" height="{{'1120rpx'}}" nextMargin="{{nextMargin}}" previousMargin="{{previousMargin}}" style="margin:0;" thing="{{orderList}}">
+                <view class="myorder-card {{i==current?'zoom-in':'zoom-out'}}" data-id="{{item.id}}" data-index="{{i}}" slot="slot-{{i}}" wx:for="{{orderList}}" wx:for-index="i">
+                    <view class="order-detail__top">
+                        <view class="card-title">
+              {{item.store_name}}</view>
+                        <view class="card-num">
+              {{item.queue_order_code}}
+              <view class="card-num-append">（{{item.queue_name}}-{{item.queue_order_state_str}}）</view>
+                        </view>
+                        <view class="card-message">
+                            <view class="card-message__div">
+                                <view>{{item.wait_num}}桌</view>
+                                <view>前方排队</view>
+                            </view>
+                            <view class="card-message__div">
+                                <view>{{item.diners_num}}人</view>
+                                <view>用餐人数</view>
+                            </view>
+                        </view>
+                        <view class="myorder-card__bottom">
+                            <view class="myorder-card__item">
+                                <view>联系电话</view>
+                                <view>{{item.mobile}}</view>
+                            </view>
+                            <view class="myorder-card__item">
+                                <view>下单时间</view>
+                                <view>{{filter.deleteT(item.created_at)}}</view>
+                            </view>
+                            <view class="myorder-card__item">
+                                <view>门店地址</view>
+                                <view>{{item.store_address}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="order-detail__append">
+                        <view style="overflow:hidden">
+                            <view class="append-tips">
+                                <image src="../../assets/images/iconfontxiaogantanhao-2@2x.png"></image>温馨提示：
+              </view>
+                        </view>
+                        <view class="append-detail">
+                            <view>① 取号后，请提前到达现场有序排队入场，到号后30分钟内有效，截图无效；</view>
+                            <view>② 到号后需与主入口处工作人员换取纸质票，凭纸质票入场就餐；</view>
+                            <view>③ 如果您的排队订单已到号，但您的朋友还未到场，您可先行就坐
+点餐，待朋友到场后，再根据场内提示在【绿色通道】处接人入座。</view>
+                        </view>
+                        <view bindtap="callPhone" class="append-li" data-phone="{{item.service_tel}}">
+                            <block wx:if="{{item.service_tel_state==0}}">
+                                <image src="../../assets/images/ic_tips_2.png"></image>
+                联系客服：{{item.service_tel}}
+                </block>
+                        </view>
+                    </view>
+                    <view class="bottom">
+                        <view bindtap="handlerCancel" class="bottom-btn" data-id="{{item.id}}" wx:if="{{item.queue_order_state==1}}">
+                取消排队
+              </view>
+                    </view>
+                </view>
+            </slider>
+            <view class="dot-list">
+                <view class="dot {{i==current?'dot-active':''}}" data-index="{{i}}" wx:for="{{orderList}}" wx:for-index="i"></view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="filter" src="../../utils/filter.wxs" />

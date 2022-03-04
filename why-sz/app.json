@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/order/index",
+    "pages/myorder/index",
+    "pages/history/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#0237FF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "排队",
+        "iconPath": "assets/images/icon-home.png",
+        "selectedIconPath": "assets/images/icon-home-d.png"
+      },
+      {
+        "pagePath": "pages/myorder/index",
+        "text": "取号记录",
+        "iconPath": "assets/images/icon-order.png",
+        "selectedIconPath": "assets/images/icon-order-d.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

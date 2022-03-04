@@ -1,0 +1,84 @@
+<template name="renderCombinationProdcut">
+    <view class="c-product c-product-combination">
+        <template is="renderLeftContent" data="{{...anonymousState__temp8}}"></template>
+        <view class="product-content">
+            <view class="first-product">
+                <image alt="" class="c-product__img" src="{{product1.imagePath}}"></image>
+                <view class="product-meta">
+                    <view class="c-product__title">{{product1.shortName}}</view>
+                    <view class="c-product__discount" wx:if="{{isShowDicountPirce}}">组合|省
+                                <price compid="{{$compid__196}}"></price>
+                    </view>
+                    <view class="c-product__price">
+                        <price compid="{{$compid__197}}"></price>
+                        <text class="gray">/组</text>
+                        <view class="c-price c-price--disabled" wx:if="{{isShowDicountPirce}}">
+                            <price compid="{{$compid__198}}"></price>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="connet-dash"></view>
+            <view class="second-product">
+                <image alt="" class="c-product__img" src="{{product2.imagePath}}"></image>
+                <view class="product-meta">
+                    <view class="c-product__title">{{product2.shortName}}</view>
+                    <stepper compid="{{$compid__199}}"></stepper>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderProductActLabel">
+    <view class="type_label_cart type_label_collectCard" style="{{_$anonymousState__temp}}" wx:if="{{findConfig}}"></view>
+    <view class="{{'type_label_cart type_label_'+activity.businessType}}" style="{{_$anonymousState__temp2}}" wx:elif="{{activity&&activity.businessType&&isShowLabel}}"></view>
+    <view class="type_label_cart type_label_0" wx:elif="{{product.isNewProduct&&isShowLabel}}"></view>
+    <view wx:else></view>
+</template>
+<template name="renderPrice">
+    <view class="c-product-price">
+        <view class="c-price">
+            <price compid="{{$compid__193}}"></price>
+        </view>
+        <toggle compid="{{$compid__194}}">
+            <view class="c-price c-price--disabled">
+                <price compid="{{$compid__195}}"></price>
+            </view>
+        </toggle>
+    </view>
+</template>
+<template name="renderPromotionInfo">
+    <view wx:if="{{!cartItem}}"></view>
+    <view wx:elif="{{!activity||activity.skuType==2}}"></view>
+    <view wx:elif="{{cartItem.activityItem&&cartItem.activityItem.activityItemName}}">
+        <text class="c-product__label">{{cartItem.activityItem.activityItemName}}</text>
+    </view>
+    <view wx:else></view>
+</template>
+<template name="renderRightContent">
+    <block wx:if="{{product}}">
+        <view class="img_box">
+            <image alt="" class="c-product__img" src="{{product.imagePath}}"></image>
+            <template is="renderProductActLabel" data="{{...anonymousState__temp2}}"></template>
+        </view>
+        <view class="c-product__des">
+            <view class="c-product__title">{{product.shortName}}</view>
+            <template is="renderPromotionInfo" data="{{...anonymousState__temp3}}"></template>
+            <template is="renderPrice" data="{{...anonymousState__temp4}}"></template>
+            <stepper compid="{{$compid__192}}"></stepper>
+        </view>
+    </block>
+</template>
+<template name="renderLeftContent">
+    <toggle compid="{{$compid__190}}">
+        <check-box compid="{{$compid__191}}"></check-box>
+    </toggle>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!product}}"></view>
+    <template is="renderCombinationProdcut" data="{{..._$_$anonymousState__temp}}" wx:elif="{{isCombinationProduct}}"></template>
+    <view class="{{'c-product '+(className||'')}}" wx:else>
+        <template is="renderLeftContent" data="{{...anonymousState__temp10}}"></template>
+        <template is="renderRightContent" data="{{...anonymousState__temp11}}"></template>
+    </view>
+</block>

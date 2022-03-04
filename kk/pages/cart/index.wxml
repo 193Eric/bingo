@@ -1,0 +1,73 @@
+<template name="renderBottomExchangePopup">
+    <bottom-sheet compid="{{$compid__180}}">
+        <view class="popup-list">
+            <cart-product-item compid="{{product[$compid__179]}}" wx:for="{{loopArray43}}" wx:for-index="_anonIdx4" wx:for-item="product" wx:key="productId"></cart-product-item>
+        </view>
+    </bottom-sheet>
+</template>
+<template name="renderBottomPopupCoupon">
+    <bottom-sheet compid="{{$compid__178}}">
+        <view class="popup-list">
+            <coupon-item compid="{{couponItem[$compid__177]}}" wx:for="{{loopArray42}}" wx:for-index="__index2" wx:for-item="couponItem" wx:key="couponId"></coupon-item>
+        </view>
+    </bottom-sheet>
+</template>
+<template name="renderFooterLogo">
+    <view class="bot_footer">
+        <view class="fe_bg_logo"></view>
+    </view>
+</template>
+<template name="renderMoreProductPane">
+    <toggle compid="{{$compid__173}}">
+        <cart-gathering-product compid="{{$compid__174}}"></cart-gathering-product>
+    </toggle>
+    <toggle compid="{{$compid__175}}">
+        <cart-more-product compid="{{$compid__176}}"></cart-more-product>
+    </toggle>
+</template>
+<template name="renderCartGroup">
+    <toggle compid="{{$compid__172}}">
+        <view>
+            <text class="title_name">{{cartGroup.name}}</text>
+            <text class="activity_item_name">{{cartGroup.extraInfo}}</text>
+        </view>
+    </toggle>
+    <view class="c-product-list c-product-list--vertical">
+        <cart-product-item compid="{{cartItem[$compid__171]}}" wx:for="{{loopArray41}}" wx:for-index="_anonIdx2" wx:for-item="cartItem" wx:key="$loopState__temp7"></cart-product-item>
+    </view>
+</template>
+<template name="renderCartItemList">
+    <template is="renderCartGroup" data="{{...anonymousState__temp}}" wx:if="{{normalCartGroup}}"></template>
+    <toggle compid="{{$compid__170}}">
+        <view class="remind_info_box">
+            <view class="remind_info">以下优惠商品不与其他优惠叠加</view>
+        </view>
+    </toggle>
+    <template is="renderCartGroup" data="{{...cartGroup[$loopState__temp3]}}" wx:for="{{loopArray40}}" wx:for-item="cartGroup"></template>
+</template>
+<template name="renderCartProductHeader">
+    <view class="p-chart-product__header">
+        <text>已选商品（{{totalCount}}）</text>
+        <view bindtap="anonymousFunc0" class="c-label" wx:if="{{list.length>0}}">领券</view>
+    </view>
+</template>
+<view class="{{pageClass}}" wx:if="{{$taroCompReady}}">
+    <delivery-tips compid="{{$compid__181}}" wx:if="{{isShowDeliverPrice}}"></delivery-tips>
+    <top-tips compid="{{$compid__182}}" wx:else></top-tips>
+    <cart-exchange compid="{{$compid__183}}"></cart-exchange>
+    <activity-config-portal compid="{{$compid__184}}"></activity-config-portal>
+    <view class="p-chart-product c-box">
+        <template is="renderCartProductHeader" data="{{...anonymousState__temp11}}"></template>
+        <cart-discount-coupon compid="{{$compid__185}}"></cart-discount-coupon>
+        <cart-discount-full-order compid="{{$compid__186}}"></cart-discount-full-order>
+        <template is="renderCartItemList" data="{{...anonymousState__temp12}}"></template>
+        <cart-coupon-info compid="{{$compid__187}}"></cart-coupon-info>
+        <full-order-discount compid="{{$compid__188}}"></full-order-discount>
+    </view>
+    <template is="renderMoreProductPane" data="{{...anonymousState__temp13}}"></template>
+    <template is="renderBottomPopupCoupon" data="{{...anonymousState__temp14}}"></template>
+    <template is="renderFooterLogo" data="{{...anonymousState__temp15}}"></template>
+    <template is="renderBottomExchangePopup" data="{{...anonymousState__temp16}}"></template>
+    <cart-footer compid="{{$compid__189}}"></cart-footer>
+    <view class="iphone-x-fix-white-padding"></view>
+</view>

@@ -1,0 +1,11 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!activity||!activity.activityProgress}}"></view>
+    <view wx:elif="{{!activity.isInActivityPeriod}}"></view>
+    <view class="product_spike_progress" wx:else>
+        <view class="product_spike_progress__value span">{{activityProgress}}%</view>
+        <view class="product_spike_progress__bar">
+            <view class="span" style="{{anonymousState__temp}}"></view>
+        </view>
+        <view class="span">全网已抢{{activity.activityBuyQuantity}}名</view>
+    </view>
+</block>

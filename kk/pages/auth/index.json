@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "account-login": "../../packages/racoonjs/components/customer/components/AccountLogin/index",
+        "modal": "../../packages/racoonjs/ui/Modal/index"
+    },
+    "navigationBarTitleText": "丰e足食"
+}

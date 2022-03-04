@@ -1,0 +1,134 @@
+.sy-recommend {
+    width: 630rpx;
+    height: 820rpx;
+    padding-top: 338rpx;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    z-index: 1002;
+    position: relative;
+}
+
+.sy-recommend.no-button .txc {
+    margin-top: 108rpx;
+}
+
+.sy-recommend,.sy-recommend view {
+    box-sizing: border-box;
+}
+
+.sy-recommend .topimg {
+    width: 100%;
+    height: 78rpx;
+    margin-bottom: 10rpx;
+}
+
+.sy-recommend .imgbox,.sy-recommend .txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sy-recommend .txt {
+    position: relative;
+    height: 40rpx;
+    padding: 0;
+    font-size: 30rpx;
+    color: #d3271e;
+    text-align: center;
+    line-height: 30rpx;
+}
+
+.sy-recommend .txt .line {
+    position: absolute;
+    top: 18rpx;
+    width: 95%;
+    height: 2rpx;
+    background: #e77d66;
+    left: 2.5%;
+}
+
+.sy-recommend .txt .span {
+    display: inline-block;
+    padding: 0 10rpx;
+    font-size: 28rpx;
+    background: #fff;
+    z-index: 1;
+    color: #e77d66;
+}
+
+.sy-recommend .imgbox {
+    width: 240rpx;
+    height: 240rpx;
+    margin: 0 auto;
+}
+
+.sy-recommend .imgbox .img,.sy-recommend .topimg .img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.sy-recommend .price {
+    text-align: center;
+    margin-top: 2rpx;
+}
+
+.sy-recommend .c-btn {
+    width: 300rpx;
+    height: 60rpx;
+    background: #fff;
+    box-shadow: 0 4rpx 8rpx 0 rgba(182,0,0,.5);
+    border-radius: 60rpx;
+    font-size: 30rpx;
+    color: #d3271e;
+    text-align: center;
+    line-height: 60rpx;
+    margin: 40rpx auto 8rpx;
+    padding: 0;
+}
+
+.sy-recommend .sy-red {
+    font-size: 26rpx;
+    color: #ff5a00;
+    text-align: center;
+    line-height: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sy-recommend .sy-red .price-mr3 {
+    margin-right: 6rpx;
+    display: flex;
+}
+
+.sy-recommend .sy-red .b {
+    font-size: 28rpx;
+    color: #fe6722;
+    letter-spacing: 0.28rpx;
+    line-height: 28rpx;
+}
+
+.sy-recommend .sy-red .sy-disabled {
+    font-size: 24rpx;
+    color: #b6b6b6;
+    line-height: 24rpx;
+    display: flex;
+}
+
+.sy-recommend .sy-red .sy-disabled .prePrice {
+    font-size: 24rpx;
+}
+
+.sy-recommend .sy-red .sy-disabled text {
+    text-decoration: line-through;
+}
+
+.sy-recommend .no-rem {
+    text-decoration: underline;
+    font-family: PingFang-SC-Medium;
+    font-size: 20rpx;
+    color: #b80d04;
+    letter-spacing: -1.24rpx;
+    text-align: center;
+    line-height: 30rpx;
+}

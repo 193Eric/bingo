@@ -1,0 +1,78 @@
+.activity-section-one {
+    margin-bottom: 30rpx;
+}
+
+.banner-activity-container {
+    width: 700rpx;
+    position: relative;
+    display: flex;
+    margin: 0 auto 4rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+}
+
+.banner-activity-container .des-container {
+    width: 520rpx;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    z-index: 2;
+    padding-left: 20rpx;
+}
+
+.banner-activity-container .title {
+    margin-top: 10rpx;
+    font-family: PingFang-SC-Heavy;
+    font-size: 40rpx;
+    letter-spacing: 0.42rpx;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.banner-activity-container .title .des1 {
+    color: #ff9600;
+}
+
+.banner-activity-container .title .task {
+    color: #333;
+}
+
+.banner-activity-container .des-btn .des2 {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #999;
+    letter-spacing: -0.6rpx;
+}
+
+.banner-activity-container .des-btn .go-btn {
+    display: inline-block;
+    border: 0;
+    width: 100rpx;
+    padding-left: 20rpx;
+    text-align: left;
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 8rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #fff;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAYCAMAAAD9GTxlAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMAwNXQMhPjIh4MJBXk2dIQxLatLSYBkLS3OgAAAExJREFUGNOdxzsSgCAMBcBABIyI+M39j+rYwKNyYLslooeAnIeDOq8GP60/9/2PHb+SGqmNrDaXzazpxtllcKEstNtwuRnJzt/qBfIC3T4EH4R807QAAAAASUVORK5CYII=) no-repeat 85% center #0d0d0d;
+    background-size: 14rpx auto;
+    margin-left: 10rpx;
+}
+
+.banner-activity-container .img-container {
+    width: 160rpx;
+    flex: 0 auto;
+    text-align: center;
+}
+
+.banner-activity-container .img-container image,.banner-activity-container .img-container img {
+    width: 160rpx;
+    height: 160rpx;
+    border-top-right-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+}

@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "modal": "../../../../../../ui/Modal/index",
+        "toggle": "../../../../../../components/Toggle/index",
+        "price": "../../../../../../components/customer/components/Price/index"
+    }
+}

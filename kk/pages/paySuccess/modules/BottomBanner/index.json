@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "store-swiper": "../../../../packages/racoonjs/components/Swiper/index",
+        "modal": "../../../../packages/racoonjs/ui/Modal/index"
+    }
+}

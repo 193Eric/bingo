@@ -1,0 +1,117 @@
+.counpon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+}
+
+.counpon-container .coupon-text {
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #000;
+    margin-right: 16rpx;
+}
+
+.counpon-container.disabled {
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(8%,#efefef),to(#d3d3d3));
+    background-image: linear-gradient(-180deg,#efefef 8%,#d3d3d3 100%);
+}
+
+.counpon-container.disabled .li:not(:last-child) {
+    border-right: 2rpx dashed #c6c6c6;
+}
+
+.counpon-container.disabled .coupon-button_item {
+    display: flex;
+}
+
+.counpon-container.disabled .coupon-button_item button {
+    color: #8a8a8a;
+    padding-left: 26rpx;
+    padding-right: 26rpx;
+}
+
+.counpon-container .coupon_item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 12rpx;
+    padding-right: 12rpx;
+    height: 40rpx;
+    position: relative;
+    background-image: url(data:image/png;base64,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);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    font-size: 22rpx;
+    color: #fff1cf;
+    font-weight: 700;
+    text-align: center;
+}
+
+.counpon-container .coupon_item .value {
+    font-weight: 700;
+}
+
+.counpon-container .coupon_item+.coupon_item {
+    margin-left: 16rpx;
+}
+
+.counpon-container .coupon_item .prize-amount,.counpon-container .coupon_item .prize-name {
+    white-space: nowrap;
+    line-height: 36rpx;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.counpon-container .coupon_item .prize-amount {
+    font-size: 26rpx;
+}
+
+.counpon-container .coupon_item .prize-amount .discount_unit,.counpon-container .coupon_item .prize-name {
+    font-size: 22rpx;
+}
+
+.counpon-container .coupon_item .prize-amount .unit {
+    display: inline-block;
+    font-size: 20rpx;
+    vertical-align: text-bottom;
+    margin-left: -6rpx;
+    letter-spacing: -4rpx;
+}
+
+.counpon-container .desc {
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #000;
+    margin-left: 14rpx;
+}
+
+.counpon-container .desc .price {
+    color: #f21d02;
+}
+
+.counpon-container .coupon-button_item {
+    width: 128rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 22rpx;
+    color: #f21d02;
+    letter-spacing: 0.26rpx;
+    border: 0;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,.15);
+    border-radius: 48rpx;
+    margin-left: 20rpx;
+    margin-right: 0;
+}
+
+.counpon-container .coupon-button_item.disabled {
+    color: rgba(138,138,138,.5);
+    padding-left: 26rpx;
+    padding-right: 26rpx;
+}

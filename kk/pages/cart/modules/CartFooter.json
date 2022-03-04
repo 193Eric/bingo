@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "price": "../../../packages/racoonjs/components/customer/components/Price/index",
+        "toggle": "../../../packages/racoonjs/components/Toggle/index",
+        "check-box": "../../../packages/racoonjs/components/CheckBox/index"
+    }
+}

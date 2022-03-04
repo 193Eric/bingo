@@ -1,0 +1,224 @@
+.outsidePading {
+    padding: 0 30rpx;
+}
+
+.coupon,.flex-around,.flex-between {
+    align-items: center;
+}
+
+.coupon,.flex-around,.flex-between,.product-info .item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-around {
+    justify-content: space-around;
+}
+
+.flex,.product-info .item .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-info {
+    background-color: #fff;
+    border-radius: 8rpx;
+}
+
+.product-info.machine-type .product-list {
+    margin-bottom: 0;
+}
+
+.product-info.machine-type.failed .product-list {
+    opacity: .5;
+}
+
+.product-info .product-info-header {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #4d4d4d;
+    background: #fff;
+    position: relative;
+}
+
+.product-info .product-info-header .header_title {
+    float: left;
+}
+
+.product-info .product-info-header .header_right {
+    float: right;
+    white-space: nowrap;
+    font-size: 22rpx;
+}
+
+.product-info .product-list {
+    background-color: #fff;
+    margin-bottom: 48rpx;
+}
+
+.product-info .item {
+    height: 120rpx;
+    align-items: flex-start;
+}
+
+.product-info .item+.item {
+    margin-top: 32rpx;
+}
+
+.product-info .item .des_price {
+    color: #ff9600;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+}
+
+.product-info .item .des_price span:first-child,.product-info .item .des_price text:first-child {
+    font-size: 20rpx;
+    font-weight: 700;
+}
+
+.product-info .item .des_price span:last-child,.product-info .item .des_price text:last-child {
+    font-family: PingFang-SC-Medium;
+    font-size: 34rpx;
+}
+
+.product-info .item .des_price .origin-price {
+    color: #8a8a8a;
+    text-decoration: line-through;
+    margin-left: 18rpx;
+}
+
+.product-info .item .des_price .origin-price span:first-child,.product-info .item .des_price .origin-price text:first-child {
+    font-size: 26rpx;
+    font-weight: initial;
+}
+
+.product-info .item .des_price .origin-price span:last-child,.product-info .item .des_price .origin-price text:last-child {
+    font-family: PingFang-SC-Regular;
+    font-size: 26rpx;
+}
+
+.product-info .item .pay-price {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 12rpx;
+}
+
+.product-info .item .left .img {
+    height: 120rpx;
+    width: 120rpx;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 30rpx;
+    position: relative;
+}
+
+.product-info .item .left .img image,.product-info .item .left .img img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-info .item .left .product-intro .p:first-child {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #4d4d4d;
+}
+
+.product-info .item .left .product-intro .p:last-child {
+    opacity: .4;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #4d4d4d;
+}
+
+.product-info .item .left .product-intro .p:last-child.warn_style {
+    color: #f33;
+    opacity: 1;
+}
+
+.product-info .item .right {
+    font-family: PingFang-SC-Medium;
+    font-size: 28rpx;
+    color: #4d4d4d;
+    padding-top: 10rpx;
+}
+
+.product-info .item .right .pay-price {
+    color: #4d4d4d;
+}
+
+.product-info .item .right .del {
+    display: block;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #c5c6c7;
+    text-align: center;
+}
+
+.product-info .item.hide {
+    display: none;
+}
+
+.product-info .item:last-child {
+    border: 0;
+}
+
+.product-info .item.border-none {
+    border: 0;
+}
+
+.product-info .item.machine-type .left .product-intro .p:first-child {
+    margin-bottom: 27.6rpx;
+}
+
+.coupon {
+    height: 100rpx;
+    border-top: 2rpx solid #f3f5f7;
+    background-color: #fff;
+}
+
+.coupon .h4 {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    font-weight: 400;
+}
+
+.coupon .keywords,.coupon .keywords .no-choosed-coupon {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #4d4d4d;
+}
+
+.coupon .keywords span.red {
+    color: #ff2b00;
+    margin-right: 20rpx;
+}
+
+.coupon .keywords .no-choosed-coupon {
+    color: #c5c6c7;
+}
+
+.coupon .coupon-tips {
+    display: inline-block;
+    vertical-align: sub;
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 12rpx;
+    background-size: 100% 100%;
+}
+
+.type_label_collectCard {
+    width: 100%;
+    height: 64rpx;
+    position: absolute;
+    left: -8rpx;
+    top: -8rpx;
+    z-index: 2;
+}

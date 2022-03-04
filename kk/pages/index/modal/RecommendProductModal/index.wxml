@@ -1,0 +1,30 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!$store}}"></view>
+    <view wx:elif="{{!product}}"></view>
+    <modal compid="{{$compid__154}}" wx:else>
+        <view class="{{contentClassname}}" style="{{anonymousState__temp}}">
+            <view class="imgbox">
+                <image class="img" id="imagePath" src="{{product.imagePath}}"></image>
+            </view>
+            <view class="p sy-red price">
+                <view class="span price-mr3">
+                    <toggle compid="{{$compid__155}}">只要</toggle>
+                    <view class="em font24 ml5">
+                        <view class="b" id="salePrice">
+                            <price compid="{{$compid__156}}"></price>
+                        </view>
+                    </view>
+                </view>
+                <toggle compid="{{$compid__157}}">
+                    <view class="span sy-disabled">
+                        <price compid="{{$compid__158}}"></price>
+                    </view>
+                </toggle>
+            </view>
+            <view bindtap="addProduct" class="c-btn c-btn--primary" data-e-tap-a-a="{{product}}" data-e-tap-so="this" id="recommendAddToChart" wx:if="{{!isCounter}}">我要买</view>
+            <view class="txc">
+                <view bindtap="closeProductRecommend" class="font9 no-rem" data-e-tap-so="this" id="noRem">不再推荐</view>
+            </view>
+        </view>
+    </modal>
+</block>

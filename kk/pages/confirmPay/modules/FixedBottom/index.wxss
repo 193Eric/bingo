@@ -1,0 +1,88 @@
+.outsidePading {
+    padding: 0 30rpx;
+}
+
+.confirm-pay,.flex,.flex-around,.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex,.flex-around {
+    justify-content: space-around;
+}
+
+.flex {
+    justify-content: flex-start;
+    -webkit-align-items: center;
+}
+
+.confirm-pay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-top: 2rpx solid #f3f5f7;
+    background-color: #fff;
+    z-index: 99;
+    box-sizing: border-box;
+}
+
+.confirm-pay .price,.confirm-pay .price .h5,.confirm-pay .price h5 {
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #4d4d4d;
+    font-weight: 400;
+}
+
+.confirm-pay .price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.confirm-pay .price .h5,.confirm-pay .price .p,.confirm-pay .price h5,.confirm-pay .price p {
+    margin-bottom: 0;
+}
+
+.confirm-pay .price .discout-money view,.confirm-pay .price .p view,.confirm-pay .price .real-pay view {
+    display: inline;
+}
+
+.confirm-pay .price .h5,.confirm-pay .price h5 {
+    letter-spacing: 0.34rpx;
+}
+
+.confirm-pay .price .real-pay {
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    color: #ff9600;
+    letter-spacing: 0.34rpx;
+    margin-right: 10rpx;
+    display: inline-block;
+}
+
+.confirm-pay .price .del,.confirm-pay .price .discout-money {
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #4d4d4d;
+    letter-spacing: 0.26rpx;
+}
+
+.confirm-pay .price .del {
+    opacity: .5;
+    text-decoration: line-through;
+    display: inline-block;
+}
+
+.confirm-pay .price .discout-money {
+    opacity: .8;
+}
+
+.confirm-pay .fe-btn.disabled {
+    background: #ddd;
+    color: #999;
+}

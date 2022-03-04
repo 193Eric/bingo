@@ -1,0 +1,11 @@
+<toggle compid="{{$compid__201}}" wx:if="{{$taroCompReady}}">
+    <view class="c-box c-product-gather">
+        <view class="c-product-gather__header">
+            <text class="c-product-gather__title">凑单专区</text>
+            <text class="c-product-gather__help"></text>
+        </view>
+        <view class="c-product-list c-product-list--horizontal">
+            <cart-more-product-item compid="{{product[$compid__200]}}" wx:for="{{loopArray44}}" wx:for-index="_anonIdx2" wx:for-item="product" wx:key="productId"></cart-more-product-item>
+        </view>
+    </view>
+</toggle>

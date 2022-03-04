@@ -1,0 +1,19 @@
+<template name="renderExchangeTips">
+    <view class="c-top-tips exchange-theme">
+        <view class="flag">换购</view>
+        <view class="content">{{text}}</view>
+        <view bindtap="anonymousFunc0" class="action">去换购<text class="iconfont iconshopping-cat_icon_go"></text>
+            <text class="iconfont iconshopping-cat_icon_go"></text>
+        </view>
+    </view>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!text}}"></view>
+    <template is="renderExchangeTips" data="{{..._$_$anonymousState__temp}}" wx:elif="{{type==TipsType.Exchange}}"></template>
+    <view class="c-top-tips" wx:else>
+        <text class="o-icon-warning" wx:if="{{!isShowCouponBtn}}"></text>
+        <text class="c-top-tips__text">{{text}}</text>
+        <text bindtap="anonymousFunc1" class="float-right" wx:if="{{isShowCouponBtn}}">查看</text>
+        <text bindtap="onClickClose" class="iconfont iconuse_icon_close_gray" data-e-tap-so="this" wx:else></text>
+    </view>
+</block>

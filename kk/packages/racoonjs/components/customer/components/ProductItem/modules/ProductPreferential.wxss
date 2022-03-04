@@ -1,0 +1,51 @@
+.preferential_information {
+    height: 32rpx;
+    margin-bottom: 16rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 22rpx;
+    display: flex;
+}
+
+.preferential_information .exchange_w,.preferential_information .full_piece_w {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22rpx;
+    padding: 4rpx 8rpx;
+    overflow: visible;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+    font-family: PingFangSC-Medium;
+    color: #ff8e00;
+}
+
+.preferential_information .exchange_w:before,.preferential_information .full_piece_w:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(.5,.5);
+    width: 200%;
+    height: 200%;
+    border-radius: 10rpx;
+    border: 2rpx solid #ffcc83;
+}
+
+.preferential_information .low-stock-flag {
+    font-family: PingFang-SC-Medium;
+}
+
+.preferential_information .discount_value {
+    color: #fe6722;
+    padding-left: 30rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAjVBMVEX/7+kAAAD/5Nf/dzr/jlr/biz/u5z/zrj/7+n/7uT/bCn/f0T/aiX/hU3/q4X/2sr/8Or/8On/7ev/l2f/wqf/6+L/8er/7uj/5uD/dTb/8er/7+r/7+n/8ev/8N//czP/e0D/nnH/onf/pXz/s5H/1cL/7+v/8Ov/7en/8Or/8On/6+f/iVP/7ur/ZyIh5uGAAAAALnRSTlOAAIXjx/OfkjIO9tn70aqLeCIavpmCXSwF521YTigI6963s7CkjXNkRUI9Fcxqjf4B3QAAAWZJREFUKM99k9mSgjAQRS8gkACyIzgq7o5r///nTZMIBK2a83CL1CEkoTuwDGSe5dIyGXSzWafoSFd186U3Pxi5iKluV5jyKw0tX/jkkg+6HT/sezY0qez1AoztHZ5OROT0/tVoLcDsiQmc2Xz0N6WbC5hdVMQ+mNnoZaeFegycLrXfQnNlrVc+0xMo1fRDRAm8ip9+WLfoONEecEMgCck9JQ4dwTws5EoX5AGejziguc0RJGBqCxul59SN7TkFcRchhWDuFoTSS5fDc2l35ggTft1Te0OttENxNaNob3Mc1F6OenamtO+SS45fbjnA6NnCguxPS0VVUFRUaqTXzvjcqh4lbUt/ScsSxp9LG9ZXdHCleE+VabGyWD/w5uhSbFpkqmLrodjsDbvQBZWp4XfL3iLX2srQcw6jYPa2Yug1gW9uRqdu0k8rJn3+WEz7OP+8JdlilLVxSwba+r5erW9CTu7Yv/wBAE8Z4u7Qs+wAAAAASUVORK5CYII=) no-repeat left center;
+    background-size: 30rpx 30rpx;
+    font-family: PingFang-SC-Regular;
+    font-size: 24rpx;
+    display: inline-block;
+    margin-right: 8rpx;
+    line-height: 30rpx;
+    border: 2rpx solid transparent;
+}

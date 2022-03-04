@@ -1,0 +1,29 @@
+<template name="renderResetDialog">
+    <dialog compid="{{$compid__310}}"></dialog>
+</template>
+<template name="renderRendeBalacePay">
+    <toggle compid="{{$compid__306}}">
+        <view class="password-panels" id="js-passwordPanels">
+            <view class="pay-password">
+                <view class="pay-password__header">
+                    <view class="t_title">请输入支付密码</view>
+                    <view bindtap="cancelPay" class="t_close">×</view>
+                </view>
+                <view class="pay_all_amount">
+                    <price compid="{{$compid__307}}"></price>
+                </view>
+                <view class="pay-password__body">
+                    <pay-password compid="{{$compid__308}}" id="cdezz"></pay-password>
+                </view>
+                <view class="clearfix">
+                    <button catchtap="forgetPassword" class="pay-password__forget button-none" data-e-tap-so="this">忘记密码</button>
+                </view>
+            </view>
+        </view>
+        <number-keyboard compid="{{$compid__309}}" id="cdfzz"></number-keyboard>
+    </toggle>
+</template>
+<view wx:if="{{$taroCompReady}}">
+    <template is="renderRendeBalacePay" data="{{...anonymousState__temp2}}"></template>
+    <template is="renderResetDialog" data="{{...anonymousState__temp3}}"></template>
+</view>

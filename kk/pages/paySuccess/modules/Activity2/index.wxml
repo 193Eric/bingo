@@ -1,0 +1,24 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!data||data.length==0}}"></view>
+    <view class="activity-section-two" wx:else>
+        <view class="activity-container-box">
+            <view class="title">
+                <view class="span">下单有惊喜</view>
+                <view class="p">恭喜获得以下奖励</view>
+            </view>
+            <view class="ul activity-container">
+                <block wx:if="{{data}}">
+                    <view class="li activity_item" wx:for="{{loopArray58}}" wx:key="$loopState__temp2">
+                        <view class="p item_title">{{item[$original].itemName}}</view>
+                        <view class="item_img-container">
+                            <image mode="widthFix" src="{{item[$original].staticImage}}" wx:if="{{item[$original].staticImage}}"></image>
+                        </view>
+                        <view class="item_button-container">
+                            <view bindtap="anonymousFunc0" class="button" data-e-tap-a-a="{{item[_$indexKey]}}" data-e-tap-so="this">{{item[$original].buttonName}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</block>

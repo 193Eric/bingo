@@ -1,0 +1,166 @@
+<template name="renderCheckBoxORInsufficient">
+    <text class="disabled" wx:if="{{item.payDataMapKey==='businessPayInfoList'&&businessSelectedData&&businessSelectedData.balance<totalPrice}}">企业余额不足</text>
+    <text class="un-enough-balance" wx:elif="{{item.checkBalance&&item.isDisabled}}">积分不足: {{payData.balanceData.balance}}</text>
+    <check-box compid="{{$compid__253}}" wx:elif="{{!payServeData}}"></check-box>
+    <text class="un-enough-balance" wx:elif="{{isPointPayItem&&isNotEnoughBalance}}">积分不足: {{payServeData.originBalance||payServeData.balance}}</text>
+    <text class="un-enough-balance" wx:elif="{{isNotEnoughBalance}}">余额不足: {{payServeData.balance}}</text>
+    <check-box compid="{{$compid__254}}" wx:else></check-box>
+</template>
+<template name="renderChoosePay">
+    <view class="{{'pay-choosed '+(isBusinessDisabled?'disabled':'')}}">
+        <template is="renderPayItem" data="{{...item[$loopState__temp21]}}" wx:for="{{loopArray50}}" wx:for-index="_anonIdx4" wx:key="id"></template>
+    </view>
+</template>
+<template name="renderDiscountInfo">
+    <view wx:if="{{!currentSelectPayMethod}}"></view>
+    <view class="coupon sfim_discount_info" wx:elif="{{checkItem.openType=='7'&&payServeData&&!isUsedFullOrderCut&&payServeData.discount<1}}">
+        <view class="h4">折扣</view>
+        <view class="p">正价商品{{_$discount}}折</view>
+    </view>
+    <view wx:else></view>
+</template>
+<template name="renderBusinessPayConfirmModal">
+    <view wx:if="{{!businessSelectedData}}"></view>
+    <modal compid="{{$compid__244}}" wx:else>
+        <view class="fe-pay-info">
+            <view class="fe-pay-info__title">
+                <view bindtap="anonymousFunc13" class="fe-pay-info__close" id="js-close">×</view>支付</view>
+            <view class="fe-pay-info__body">
+                <view>
+                    <price compid="{{$compid__245}}"></price>
+                </view>
+                <view class="fe-pay-info__help">由企业“{{businessSelectedData.groupName}}”支付</view>
+                <button bindtap="anonymousFunc14" class="fe-pay-info__apply" id="js-applyPay">确认支付</button>
+            </view>
+        </view>
+    </modal>
+</template>
+<template name="renderBusinessRuleDialog">
+    <view wx:if="{{!businessSelectedData}}"></view>
+    <dialog compid="{{$compid__243}}" wx:else>
+        <text class="rule-content">每天<text wx:for="{{businessSelectedData.groupWalletUseTimeConfigs||[]}}" wx:for-index="_anonIdx2" wx:for-item="config">{{config.startTime}}-{{config.endTime}}</text>，由企业支付</text>
+    </dialog>
+</template>
+<template name="renderEPayDescDialog">
+    <dialog compid="{{$compid__242}}">
+        <view>丰享积分等同e币账户余额</view>
+        <view>兑换比例为1:1</view>
+    </dialog>
+</template>
+<template name="renderChannelPrice">
+    <text class="sfim_balance" wx:if="{{channel=='xmf'&&payData.balanceData.balance>=totalPrice}}">剩余积分：{{payData.balanceData.balance}}</text>
+    <view wx:elif="{{!payServeData}}"></view>
+    <text class="accountBalance" wx:elif="{{payDataMapKey==='balanceData'&&payServeData&&payServeData.balance>=totalPrice}}">{{_$anonymousState__temp3}}</text>
+    <text class="sfim_balance" wx:elif="{{payDataMapKey==='sfimBalanceData'}}">余额：{{payServeData.balance}}</text>
+    <text class="sfim_balance" wx:elif="{{anonymousState__temp10}}">剩余积分：{{payServeData.originBalance||payServeData.balance}}</text>
+    <view wx:else></view>
+</template>
+<template name="renderBusinessSelectModal">
+    <dialog compid="{{$compid__240}}" wx:if="{{businessPayInfoList.length===0}}"></dialog>
+    <modal compid="{{$compid__241}}" wx:else>
+        <view class="business_select_container">
+            <view class="business_select_title">
+                <view class="business_select_title_span">请选择为您支付的企业</view>
+            </view>
+            <view class="ul business_item_box">
+                <view bindtap="anonymousFunc9" class="{{'business_item '+(businessSelectedData&&businessSelectedData.groupCustomerId===businessPayInfo[$original].groupCustomerId&&'selected')}}" data-e-tap-a-a="{{businessPayInfo[_$indexKey]}}" data-e-tap-so="this" wx:for="{{loopArray48}}" wx:for-item="businessPayInfo" wx:key="index">
+                    <view class="group_name">{{businessPayInfo[$original].groupName}}</view>
+                    <view class="group_time">
+                        <text wx:for="{{businessPayInfo[$original].groupWalletUseTimeConfigs||[]}}" wx:for-index="i" wx:for-item="config" wx:key="i">({{config.startTime}}-{{config.endTime}})</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </modal>
+</template>
+<template name="renderPayItem">
+    <view bindtap="anonymousFunc2" class="js_business_select business_select" wx:if="{{isBusinessPayItem&&!businessSelectedData}}">
+        <view class="h4">
+            <view class="icon-img">
+                <image alt="" src="{{item.icon}}"></image>
+            </view>
+            <text class="business_pay_name">企业支付</text>
+            <view bindtap="anonymousFunc3" class="span select_info">请选择企业</view>
+        </view>
+        <view class="tips">
+            <template is="renderCheckBoxORInsufficient" data="{{..._$_$anonymousState__temp}}"></template>
+        </view>
+    </view>
+    <view class="{{payItemClass}}" wx:else>
+        <view bindtap="onCheckBoxChange" data-e-tap-a-a="{{item}}" data-e-tap-so="this">
+            <view class="h4">
+                <view class="icon-img">
+                    <image alt="" src="{{item.icon}}"></image>
+                </view>
+                <toggle compid="{{$compid__236}}">
+                    <view class="dl">
+                        <view class="dt pay_c_name">
+                            <text class="business_pay_name">{{businessSelectedData&&businessSelectedData.groupName}}</text>
+                            <view bindtap="anonymousFunc4" class="business_remind_icon"></view>
+                            <text bindtap="anonymousFunc5" class="re_select_btn" wx:if="{{businessSelectedData}}">重选</text>
+                        </view>
+                        <view class="dd rest_money_info">
+                            <block wx:if="{{personalLimit}}">个人剩余限额不足： {{businessSelectedData&&businessSelectedData.leftLimit}} 元</block>
+                            <block wx:if="{{!personalLimit}}">个人剩余限额： {{businessSelectedData&&businessSelectedData.leftLimit}} 元</block>
+                        </view>
+                    </view>
+                </toggle>
+                <toggle compid="{{$compid__237}}">
+                    <view class="{{'pay-content-center '+(item.payDataMapKey==='combinedPay'?'combinedPay':'')}}">{{item.name}}
+                            <view class="rest_money_info" wx:if="{{item.payDataMapKey==='combinedPay'}}">{{item.text}}<text>{{anonymousState__temp6}}元</text> + 微信支付<text>{{anonymousState__temp7}}元</text>
+                        </view>
+                        <image alt="" class="union_pay_icon" src="{{item.icon2}}" wx:if="{{item.icon2}}"></image>
+                        <text bindtap="openEPayDescDialog" class="iconfont iconshuoming" wx:if="{{item.payDataMapKey==='balanceData'&&openType==='7'}}"></text>
+                        <text class="remind_info-confirm" wx:if="{{item.payDataMapKey==='xmfBalanceData'&&openType==='8'&&payData.xmfBalanceData}}">({{payData.xmfBalanceData.exchangeRate}}积分可抵1元)</text>
+                        <text bindtap="anonymousFunc6" class="select_info" wx:if="{{item.payDataMapKey==='businessPayInfoList'}}">请选择企业</text>
+                    </view>
+                </toggle>
+            </view>
+            <view class="tips">
+                <toggle compid="{{$compid__238}}">
+                    <template is="renderCheckBoxORInsufficient" data="{{...anonymousState__temp2}}"></template>
+                </toggle>
+                <toggle compid="{{$compid__239}}">
+                    <template is="renderChannelPrice" data="{{...anonymousState__temp3}}"></template>
+                    <template is="renderCheckBoxORInsufficient" data="{{...anonymousState__temp4}}"></template>
+                </toggle>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderFullCutInfo">
+    <view class="coupon sfim_discount_info full-cut-discount" wx:if="{{isUsedFullOrderCut&&fullOrderDiscountInfo}}">
+        <view class="h4">整单满减</view>
+        <view class="p" wx:if="{{fullOrderDiscountInfo.activity.activityRemainQuantity==0}}">已抢完</view>
+        <view class="p" wx:else>
+            <view class="price-origin">-
+                                <price compid="{{$compid__235}}"></price>
+            </view>
+        </view>
+    </view>
+    <view wx:else></view>
+</template>
+<template name="renderPasswordDialog">
+    <dialog compid="{{$compid__234}}">
+        <view>{{passwordDialogContent}}</view>
+    </dialog>
+</template>
+<view class="{{pageClass}}" wx:if="{{$taroCompReady}}">
+    <activity-config-portal compid="{{$compid__246}}"></activity-config-portal>
+    <view class="wrap_box">
+        <address-select compid="{{$compid__247}}" id="biezz" wx:if="{{$shelf.isSchoolShelf}}"></address-select>
+        <product-list compid="{{$compid__248}}"></product-list>
+        <extra-price-info compid="{{$compid__249}}"></extra-price-info>
+        <template is="renderFullCutInfo" data="{{...anonymousState__temp13}}"></template>
+        <template is="renderChoosePay" data="{{...anonymousState__temp14}}"></template>
+        <template is="renderEPayDescDialog" data="{{...anonymousState__temp15}}"></template>
+        <template is="renderBusinessSelectModal" data="{{...anonymousState__temp16}}"></template>
+        <template is="renderBusinessRuleDialog" data="{{...anonymousState__temp17}}"></template>
+        <template is="renderPasswordDialog" data="{{...anonymousState__temp18}}"></template>
+        <template is="renderBusinessPayConfirmModal" data="{{...anonymousState__temp19}}"></template>
+    </view>
+    <register-modal compid="{{$compid__250}}"></register-modal>
+    <fixed-bottom compid="{{$compid__251}}"></fixed-bottom>
+    <view class="iphone-x-fix-white-padding"></view>
+    <recommend-product-pop compid="{{$compid__252}}"></recommend-product-pop>
+</view>

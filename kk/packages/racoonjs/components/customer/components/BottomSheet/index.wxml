@@ -1,0 +1,12 @@
+<view class="{{modalClass}}" wx:if="{{$taroCompReady}}">
+    <view bindtap="handleClickOverlay" class="bottom-sheet-mask"></view>
+    <view class="{{anonymousState__temp}}">
+        <toggle compid="{{$compid__127}}">
+            <view bindtap="close" class="c-chart-popup__close">
+                <view class="iconfont iconuse_icon_close_gray at-icon at-icon-close"></view>
+            </view>
+        </toggle>
+        <text class="c-chart-popup__title" wx:if="{{title}}">{{title}}</text>
+        <slot></slot>
+    </view>
+</view>

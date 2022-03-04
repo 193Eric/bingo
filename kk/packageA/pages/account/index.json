@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "toggle": "../../../packages/racoonjs/components/Toggle/index",
+        "dialog": "../../../packages/racoonjs/ui/Dialog/index"
+    },
+    "navigationBarTitleText": "账户安全"
+}

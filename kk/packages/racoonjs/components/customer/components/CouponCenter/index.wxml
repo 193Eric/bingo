@@ -1,0 +1,55 @@
+<template name="renderCouponList">
+    <view class="coupon_center_ul">
+        <block wx:if="{{couponList}}">
+            <view bindtap="clickReceive" class="{{'coupon_center_item clearfix '+(item[$original].receiveStatus!=1?'has_received':'')}}" data-e-tap-a-a="{{item[$original]}}" data-e-tap-so="this" wx:for="{{loopArray30}}" wx:for-index="_anonIdx2" wx:key="couponId">
+                <view class="coupon_right">
+                    <toggle compid="{{item[$compid__118]}}">
+                        <view class="coupon_right_btn">领取</view>
+                    </toggle>
+                    <toggle compid="{{item[$compid__119]}}">
+                        <view>已领取</view>
+                    </toggle>
+                    <toggle compid="{{item[$compid__120]}}">
+                        <view>已领完</view>
+                    </toggle>
+                </view>
+                <view class="coupon_left">
+                    <view class="top_value">
+                        <toggle compid="{{item[$compid__121]}}">
+                            <view>
+                                <price compid="{{item[$compid__122]}}"></price>
+                            </view>
+                        </toggle>
+                        <toggle compid="{{item[$compid__123]}}">
+                            <view>
+                                <view class="coupon_discount">{{item[$original].discount}}</view>
+                                <view class="coupon_discount_icon">折</view>
+                            </view>
+                        </toggle>
+                    </view>
+                    <view>
+                        <view class="bot_condition price-line">满
+                                <price compid="{{item[$compid__124]}}"></price>可用</view>
+                        <view class="bot_remark">{{item[$loopState__temp12]}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!couponList||couponList.length===0}}"></view>
+    <view class="coupon_center_box" wx:else>
+        <image bindload="onImageLoad" class="hidden" data-e-load-so="this" src="{{couponGif}}"></image>
+        <view class="coupon_center_wrap">
+            <view class="coupon_center_ul_box">
+                <toggle compid="{{$compid__125}}">
+                    <view class="box_shadow"></view>
+                </toggle>
+                <view class="coupon_center_ul-wrapper">
+                    <template is="renderCouponList" data="{{...anonymousState__temp13}}"></template>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

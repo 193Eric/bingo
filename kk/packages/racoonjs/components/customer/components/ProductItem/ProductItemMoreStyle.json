@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "toggle": "../../../Toggle/index",
+        "price": "../Price/index",
+        "stepper": "../Stepper/index"
+    }
+}

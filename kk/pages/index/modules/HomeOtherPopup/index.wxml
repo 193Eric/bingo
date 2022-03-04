@@ -1,0 +1,35 @@
+<template name="renderTaskCardPopup">
+    <view wx:if="{{!otherPopupData}}"></view>
+    <view class="{{contentClassName}}" wx:else>
+        <view bindtap="onOtherPopupHide" class="task-card-popup__bg"></view>
+        <view class="task-card-popup__content">
+            <view class="task-card-logo"></view>
+            <view class="task-card-header"></view>
+            <view class="task-progress-wrapper">
+                <progress-bar compid="{{$compid__167}}" wx:if="{{otherPopupStatus==='taskCard'}}"></progress-bar>
+                <view bindtap="handleCouponIconClick" class="{{'task-progress-coupon-icon '+(isFinish?'active':'')}}"></view>
+                <view class="task-progress-desc">
+                    <view class="task-progress-count">{{finishNum}}/{{targetNum}}</view>
+                    <view class="task-progress-text">订单数</view>
+                </view>
+            </view>
+            <view class="content__content">
+                <view class="content__content__p pt">尊敬的{{otherPopupData.nickName}}:</view>
+                <view class="content__content__p p">{{typeName}}累计完成<text class="text">{{otherPopupData.targetNum}}</text>次
+                        <template is="renderOrderPrice" data="{{...anonymousState__temp3}}"></template>订单, 可获得<text class="text">{{otherPopupData.prizeName}}</text>哦~</view>
+                <view class="content__content__p p">赶紧去挑选你最喜爱的商品下单吧~</view>
+            </view>
+            <view bindtap="onOtherPopupHide" class="content__btn">去下单</view>
+            <view bindtap="jumpActivityH5" class="content__tips">查看我的任务清单</view>
+        </view>
+    </view>
+</template>
+<template name="renderOrderPrice">
+    <text class="{{classname}}" wx:if="{{targetValue>0.01}}">实付<text class="text">{{targetValue}}</text>元以上</text>
+    <text class="{{classname}}" wx:else></text>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!otherPopupData}}"></view>
+    <template is="renderTaskCardPopup" data="{{..._$_$anonymousState__temp}}" wx:elif="{{anonymousState__temp2}}"></template>
+    <block wx:else></block>
+</block>

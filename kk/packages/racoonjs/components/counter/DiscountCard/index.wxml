@@ -1,0 +1,95 @@
+<template name="renderCardFooter">
+    <view class="discount-card-footer">
+        <view class="left">未完成需退回优惠</view>
+        <view class="right" wx:if="{{orderMinAmount&&orderMinAmount>0}}">订单金额大于{{orderMinAmount}}元可用</view>
+    </view>
+</template>
+<template name="renderCardContent">
+    <view class="discount-card-content">
+        <view class="left">
+            <view class="{{'theme2 '+(isComplete?'activity-complete':'')}}">
+                <view class="{{'progress-block progress-block--min '+(totalCount?'progress-block_leng'+totalCount:'')}}">
+                    <view class="progress-block--abs">
+                        <view class="{{'progress-block__item '+(currentStep-1>=index?'active':'')}}" wx:for="{{mapList}}" wx:key="index">
+                            <view class="check"></view>
+                        </view>
+                    </view>
+                    <view class="{{'progress-block__item '+(currentStep-1>=index?'active':'')}}" wx:for="{{mapList}}" wx:key="index">
+                        <view class="check"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="rest">还差<text class="number">{{restFinishCount}}</text>笔</view>
+        </view>
+        <view class="right">先享每单立减<text class="number">{{rewardAmount}}</text>元</view>
+    </view>
+</template>
+<template name="renderCardHeader">
+    <view class="discount-card-header">
+        <view class="left">
+            <text class="dicount-card--time">{{endTimeText}}下单{{objectiveCount}}次</text>
+        </view>
+        <view class="right">
+            <view class="arrow-flash">
+                <view class="i iconfont iconshopping-cat_icon_go"></view>
+                <view class="i iconfont iconshopping-cat_icon_go"></view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderOnGoingCard">
+    <view bindtap="openCardDetail" class="discount-card anniversary-progress" data-e-tap-a-a="{{cardId}}" data-e-tap-so="this" wx:if="{{totalCount!==0}}">
+        <view class="discount-card-content-wrapper">
+            <template is="renderCardHeader" data="{{..._$_$anonymousState__temp}}"></template>
+            <template is="renderCardContent" data="{{..._$_$anonymousState__temp2}}"></template>
+            <template is="renderCardFooter" data="{{..._$_$anonymousState__temp3}}"></template>
+        </view>
+    </view>
+</template>
+<template name="renderOnGoingCardInPaySuccessPage">
+    <view class="anniversary-progress" wx:if="{{totalCount!==0}}">
+        <view class="{{'theme1 '+(isComplete?'activity-complete':'')}}">
+            <view class="theme1__title">
+                <view class="ann-publicity-map">
+                    <image alt="" src="{{IMG_Title}}"></image>
+                </view>
+                <view class="title-wrapper">
+                    <view class="main-title">{{isComplete?'已完成约定':'还差'+restFinishCount+'笔订单完成约定'}}</view>
+                </view>
+                <view bindtap="openCardDetail" class="button" data-e-tap-a-a="{{cardId}}" data-e-tap-so="this">查看详情</view>
+            </view>
+            <view class="{{'progress-block '+(totalCount>0?'progress-block_leng'+totalCount:'')}}">
+                <view class="progress-block--abs">
+                    <view class="{{'progress-block__item '+(currentStep-1>=index?'active':'')}}" wx:for="{{mapList}}" wx:key="index">
+                        <view class="check"></view>
+                    </view>
+                </view>
+                <view class="{{'progress-block__item '+(currentStep-1>=index?'active':'')+' '+(totalCount==1&&currentStep==1?'active':'')}}" wx:for="{{mapList}}" wx:key="index">
+                    <view class="check"></view>
+                    <text class="{{currentStep-1==index?'active':''}}" wx:if="{{totalCount>1}}">{{index+1}}笔</text>
+                    <text class="{{totalCount==1&&currentStep==1&&index==1?'active':''}}" wx:if="{{totalCount<=1}}">{{index}}笔</text>
+                </view>
+            </view>
+            <view class="p" wx:if="{{isComplete}}">任务已经完成，共享受优惠<text class="price">{{totalAmount}}元</text>
+            </view>
+            <view class="p" wx:else>{{endTime}}到期
+                                <block wx:if="{{orderMinAmount&&orderMinAmount>0}}">, 每笔应付金额大于<text class="price">{{orderMinAmount}}元</text>
+                </block>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderHasCardContent">
+    <view bindtap="openCardListPage" class="discount-card-banner" data-e-tap-so="this">
+        <image class="img" mode="widthFix" src="{{imgSrc}}"></image>
+    </view>
+</template>
+<view wx:if="{{$taroCompReady}}">
+    <template is="renderOnGoingCardInPaySuccessPage" data="{{...anonymousState__temp4}}" wx:if="{{isPaySuccess}}"></template>
+    <block wx:else>
+        <template is="renderOnGoingCard" data="{{...anonymousState__temp5}}" wx:if="{{isShowCardContent}}"></template>
+        <block wx:else>
+            <template is="renderHasCardContent" data="{{...anonymousState__temp6}}" wx:if="{{isShowHasCardContent}}"></template>
+        </block>
+    </block>
+</view>

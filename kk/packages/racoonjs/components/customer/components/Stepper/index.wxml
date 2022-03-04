@@ -1,0 +1,10 @@
+<view class="{{anonymousState__temp}}" id="baezz" wx:if="{{$taroCompReady}}">
+    <view bindtap="anonymousFunc0" class="{{'span add_btn '+(isDisabled||disabled?'add_btn--disabled':'')}}"></view>
+    <block wx:if="{{isShow&&!isDisplayOnlyAdd}}">
+        <view class="product_quantity">
+            <input bindblur="blurInput" class="input" data-e-blur-so="this" type="number" value="{{anonymousState__temp2}}" wx:if="{{isShowInput}}"></input>
+            <view class="text" wx:else>{{number}}</view>
+        </view>
+        <view bindtap="onReduce" class="{{'span reduce_btn '+(disabled?'reduce_btn--disabled':'')}}" data-e-tap-so="this"></view>
+    </block>
+</view>

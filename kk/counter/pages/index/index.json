@@ -1,0 +1,20 @@
+{
+    "usingComponents": {
+        "supplement-modal": "./modal/supplementModal/index",
+        "breach-modal": "./modal/breachModal/index",
+        "new-guide-modal": "./modal/newGuideModal/index",
+        "activity-changed-modal": "./modal/activityChangedModal/index",
+        "not-pay-tips-modal": "./modal/notPayTipsModal/index",
+        "register-modal": "../../../packages/racoonjs/components/customer/components/RegisterModal/index",
+        "home-other-popup": "../../../packages/racoonjs/project/customer/pages/index/modules/HomeOtherPopup/index",
+        "top-tips": "./modules/TopTips/index",
+        "fe-header": "./components/FeHeader/index",
+        "discount-card": "../../../packages/racoonjs/components/counter/DiscountCard/index",
+        "counter-nav": "./modules/CounterNav/index",
+        "product-pane": "./modules/ProductPane/index",
+        "counter-footer-action": "./modules/CounterFooterAction/index",
+        "page-status": "./modules/PageStatus/index",
+        "index-modal": "./modal/indexModal/index"
+    },
+    "navigationBarTitleText": "丰e足食"
+}

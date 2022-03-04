@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "modal": "../../../../packages/racoonjs/ui/Modal/index"
+    }
+}

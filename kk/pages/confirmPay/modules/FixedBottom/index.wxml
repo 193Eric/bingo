@@ -1,0 +1,16 @@
+<view class="confirm-pay" wx:if="{{$taroCompReady}}">
+    <view class="price">
+        <view class="h5">合计：</view>
+        <view>
+            <view class="p">
+                <view class="span real-pay">
+                    <price compid="{{$compid__258}}"></price>
+                </view>
+            </view>
+            <view class="discout-money" wx:if="{{totalPrice<originTotalPrice}}">已优惠：
+                        <price compid="{{$compid__259}}"></price>
+            </view>
+        </view>
+    </view>
+    <view bindtap="funPrivatebjgzz" class="{{'fe-btn fe-btn--primary fe-button--radius '+(isDisabledPay?'disabled':'')}}">立即支付</view>
+</view>

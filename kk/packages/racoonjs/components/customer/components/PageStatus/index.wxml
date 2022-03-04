@@ -1,0 +1,6 @@
+<toggle compid="{{$compid__77}}" wx:if="{{$taroCompReady}}">
+    <view catchtouchmove="handleTouchMove" class="{{'page-status '+(status==='error'?'has-error':'')+' '+className}}">
+        <fe-loading wx:if="{{status==='loading'}}"></fe-loading>
+        <fe-error compid="{{$compid__78}}" wx:if="{{status==='error'}}"></fe-error>
+    </view>
+</toggle>

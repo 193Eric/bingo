@@ -1,0 +1,45 @@
+[is="miniprogram_npm/xft-weapp/goods-action-button/index"] {
+    flex: 1;
+}
+
+[is="miniprogram_npm/xft-weapp/icon/index"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[is="miniprogram_npm/xft-weapp/loading/index"] {
+    font-size: 0;
+    line-height: 1;
+}
+
+[is="miniprogram_npm/xft-weapp/tab/index"] {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+[is="miniprogram_npm/xft-weapp/tabbar-item/index"] {
+    flex: 1;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+
+page::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4rpx;
+    background-color: #fff;
+    z-index: 9999;
+    box-shadow: 0 0 21rpx 0 rgba(0,0,0,.2);
+}

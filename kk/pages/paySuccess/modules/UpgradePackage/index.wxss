@@ -1,0 +1,19 @@
+.upgrade-package {
+    width: 700rpx;
+    height: 160rpx;
+    margin: 0 auto 32rpx;
+    background: url(https://qn-cdn-pic.feng1.com/theme_pic-20200824-7aedec2cafd0bb523f8dacc113c5b718?imageslim) no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.upgrade-package .memberLevel {
+    position: absolute;
+    font-size: 60rpx;
+    color: #fff9ef;
+    left: 308rpx;
+    top: 8rpx;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 0 4rpx 8rpx #ff0400;
+}

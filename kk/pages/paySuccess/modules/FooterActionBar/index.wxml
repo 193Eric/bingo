@@ -1,0 +1,5 @@
+<view class="{{anonymousState__temp}}" wx:if="{{$taroCompReady}}">
+    <button bindtap="anonymousFunc0">联系客服</button>
+    <button bindtap="anonymousFunc1" wx:if="{{isMachineShelf||isCounter}}">申请售后</button>
+    <button bindtap="anonymousFunc2" class="primary">继续购买</button>
+</view>

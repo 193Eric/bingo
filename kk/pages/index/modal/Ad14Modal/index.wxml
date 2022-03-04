@@ -1,0 +1,5 @@
+<modal compid="{{$compid__153}}" wx:if="{{$taroCompReady}}">
+    <view class="promotion-activity-carousel">
+        <image bindtap="handleImageClick" data-e-tap-so="this" src="{{imgUrl}}"></image>
+    </view>
+</modal>

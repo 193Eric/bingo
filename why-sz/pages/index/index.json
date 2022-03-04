@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "xft-tag": "../../miniprogram_npm/xft-weapp/button/index",
+        "xft-slider": "../../miniprogram_npm/xft-weapp/slider/index",
+        "xft-field": "../../miniprogram_npm/xft-weapp/field/index",
+        "slider": "./../components/slider/index"
+    },
+    "navigationBarTitleText": "排队取号",
+    "navigationStyle": "custom"
+}

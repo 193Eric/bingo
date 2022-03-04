@@ -1,0 +1,23 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!$shelf}}"></view>
+    <bottom-sheet compid="{{$compid__126}}" wx:if="{{isClosed}}">
+        <view class="close-status-bottom-popup">
+            <image class="close-status-bottom-popup__image" src="{{IMG_CLOSE_STATUS_ICON}}"></image>
+            <view class="close-status-bottom-popup__title">打烊啦~</view>
+            <view class="close-status-bottom-popup__text">
+                <view>店主太辛劳,需要小憩一下,请晚点再来哦~</view>
+                <view class="rest">距离休息结束:
+                        <block wx:if="{{isShowDay}}">
+                        <text>{{days}}</text>天</block>
+                    <block wx:if="{{isShowHours}}">
+                        <text>{{hours}}</text>时</block>
+                    <block wx:if="{{isShowMinutes}}">
+                        <text>{{minutes}}</text>分</block>
+                    <block wx:if="{{isShowSecond}}">
+                        <text>{{second}}</text>秒</block>
+                </view>
+            </view>
+            <button bindtap="openShelfSelectPage" class="btn-primary" data-e-tap-so="this">去其他能量站购买</button>
+        </view>
+    </bottom-sheet>
+</block>

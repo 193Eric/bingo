@@ -1,0 +1,39 @@
+<template name="renderLayout2">
+    <view bindtap="jumpH5Activity" class="task-card-container task-card-container2" data-e-tap-so="this" wx:if="{{taskCardData&&taskCardData.targetNum}}">
+        <view class="task-card__img">
+            <image src="{{IMG2}}"></image>
+        </view>
+        <view class="task-card__content">
+            <text class="task-card__content__title">
+                <text class="orange">恭喜你</text> 已完成<text class="orange">{{taskCardData.targetNum}}</text>单任务</text>
+            <text>可以领取奖励啦~</text>
+        </view>
+        <view class="task-card__right">
+            <image class="btn-receive" src="{{IMG_BTN}}"></image>
+        </view>
+    </view>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <template is="renderLayout2" data="{{..._$_$anonymousState__temp}}" wx:if="{{layout==2}}"></template>
+    <view class="task-card-container" wx:elif="{{isShowTask}}">
+        <view class="task-card__img">
+            <image src="{{IMG}}"></image>
+        </view>
+        <view class="task-card__content">
+            <block wx:if="{{_$isFinish}}">
+                <view>您的任务已经全部完成了</view>
+                <view>赶紧去看看吧~</view>
+            </block>
+            <text wx:else>你有一个任务<text class="orange">待完成</text>
+            </text>
+        </view>
+        <view class="task-card__right">
+            <view bindtap="jumpH5Activity" class="btn" data-e-tap-so="this" wx:if="{{_$isFinish}}">去看看</view>
+            <block wx:else>
+                <view bindtap="onChange" class="btn" data-e-tap-so="this" wx:if="{{isUserFirst}}">打开任务卡</view>
+                <view bindtap="jumpH5Activity" class="btn" data-e-tap-so="this" wx:else>查看任务进度</view>
+            </block>
+        </view>
+    </view>
+    <view wx:else></view>
+</block>

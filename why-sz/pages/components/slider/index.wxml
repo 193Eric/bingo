@@ -1,0 +1,5 @@
+<swiper autoplay="{{autoplay}}" bindchange="swiperBindchange" circular="{{circular}}" class="slider" current="{{currentSwiperIndex}}" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" nextMargin="{{nextMargin}}" previousMargin="{{previousMargin}}" style="height:{{height}}">
+    <swiper-item wx:for="{{thing}}" wx:for-index="i" wx:for-item="t" wx:key="i">
+        <slot name="slot-{{i}}"></slot>
+    </swiper-item>
+</swiper>

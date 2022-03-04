@@ -1,0 +1,11 @@
+<template name="renderPrivacyPolicy">
+    <text bindtap="anonymousFunc0" class="why_word">《用户服务协议》</text>
+</template>
+<modal compid="{{$compid__166}}" wx:if="{{$taroCompReady}}">
+    <view class="privacy_policy_window">
+        <view class="u_title">丰e足食隐私政策提示</view>
+        <view class="u_content">感谢您对丰e足食一直以来的信任！如您已阅读并充分理解且接受我们的<text bindtap="anonymousFunc2" class="why_word">《用户服务协议》</text>及<text bindtap="anonymousFunc3" class="why_word">《用户隐私政策》</text>，请点击同意。</view>
+        <view bindtap="anonymousFunc4" class="confirm_btn" id="confirm_btn">同意</view>
+        <view bindtap="anonymousFunc5" class="disargee">不同意</view>
+    </view>
+</modal>

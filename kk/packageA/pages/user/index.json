@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "toggle": "../../../packages/racoonjs/components/Toggle/index",
+        "modal": "../../../packages/racoonjs/ui/Modal/index",
+        "user-signin": "./modules/UserSignin/index",
+        "register-modal": "../../../packages/racoonjs/components/customer/components/RegisterModal/index",
+        "customer-tab-bar": "../../../@shared/components/tabBar/index"
+    },
+    "navigationBarTitleText": "个人中心"
+}

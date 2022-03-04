@@ -1,0 +1,6 @@
+<view class="{{'bottom-tab '+($app&&$app.isIphoneX?'is-iphonex':'')}}" wx:if="{{$taroCompReady}}">
+    <view bindtap="switchTab" class="bottom-tab-item" data-e-tap-a-a="{{item[$original]}}" data-e-tap-so="this" wx:for="{{loopArray13}}" wx:key="text">
+        <image class="bottom-tab-item-img" src="{{currentPage===item[$original].pagePath?item[$original].selectedIconPath:item[$original].iconPath}}"></image>
+        <view class="bottom-tab-item-text" style="{{item[$loopState__temp2]}}">{{item[$original].text}}</view>
+    </view>
+</view>

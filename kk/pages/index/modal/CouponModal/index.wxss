@@ -1,0 +1,153 @@
+.coupon-modal {
+    background-size: 100% 100%;
+    width: 644rpx;
+    box-sizing: border-box;
+    padding-top: 0!important;
+    margin: auto auto auto 38rpx;
+}
+
+.coupon-modal view {
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+
+.coupon-modal .font12,.coupon-modal .list .right .price .unit {
+    font-size: 24rpx;
+}
+
+.coupon-modal .font14 {
+    font-size: 28rpx;
+}
+
+.coupon-modal .font16 {
+    font-size: 32rpx;
+}
+
+.coupon-modal .coupon-modal-header {
+    width: 675rpx;
+    max-width: 676rpx;
+    display: block;
+    margin: 0 auto;
+    transform: translateX(-38rpx) translateY(2rpx);
+}
+
+.coupon-modal .coupon-modal-header image,.coupon-modal .coupon-modal-header img {
+    max-width: 644rpx;
+}
+
+.coupon-modal .coupon-package-list {
+    background: #e5183e;
+    padding: 20rpx 54rpx;
+    max-height: 440rpx;
+    box-sizing: border-box;
+    width: 598rpx;
+}
+
+.coupon-modal .list {
+    width: 100%;
+    height: 116rpx;
+    background-color: #fff;
+    padding: 24rpx 14rpx 0 20rpx;
+    display: flex;
+    border-radius: 10rpx;
+    margin-bottom: 23rpx;
+    position: relative;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeoAAAB0CAMAAAB9qIGPAAAAUVBMVEX///8AAAD39/f////////////////////////////////////////////////////////29vbl5eX4+Pj6+vr9/f3p6en8/Pzz8/Pt7e3v7+9v9M7oAAAAEHRSTlP6APoKjvKaQjfV5ruUKyjPF4RzlwAAA91JREFUeNrt3Y122jAMhuFkCRT6NwnZGHb/FzqHsdJzujUBtcayvucWXmySOI67PnsZtyuCmwz9m4GqtNqOL32WUw/PBDfbXFJvqFrPw5R6eCK43fqSek31ehpyaoxpnYf+7IFq9tx3L+RbEGYJdLvHh3PpR6raSzeSZ5HPIt1uvRmGTc2z98nYbcmxXPrSunHbzvVdFr9DjVt15FjgdwI1znVq4XeEGuc6NbOnGRypkdoDTOBu4LLMD0/zt/PUnh6hOE9N0U9p76nPyx3N/08TtZw6phBEhHPJLAQH4/YzraaOQfgjCclz7wZTx8Cf8Du6m0udhGeI09iNpY6n0Ij9UWOp/4RG7H9pK3XiKyT6Mof9/kD1ayh14KsIfZHDLjPQup3Uwnyf1vsp9Z6q10zqXPourZG6tFz6Pq0xgRcWmO/VGpdlRSW+gqv3Ed40kjrylTwtU581klr4Kq7eKPurjdSRGcN6ThuphRnDek4TqSMzhvWsJlILqwhpRTGxetJAalYipbDf7fYG7trsp06spK103GVHqp791MJKQjq7E6qe/dSsRhpY7igmslokFZlSG7hnM586sVoinXA4GLgqs5868JXcrnmYTy18La8PzJAaqa1A6mUaSM2zQvy448PXV1AmHlInygSpHaSmSfrO1Hw8Wvi1NJ9aaBK/MTXvMgOtm08dKPvG1HgwWkgNqbHcUUQNqX9NpX9R9ZBanToe83K1gddQkDojpWggNFLjvtoOpF4GqZHaDqReBqmR2o4aUuMKvIAaUuO+upD51CmEiKdlHlIHzhKegbef+gwrW0iN9Woz7p8ab6EUUUVqI5Aaqa1A6mWQGqnt4Ftgd4dFSL0MUutTY391GTWkxlcTiqghNR6MFlFDaix3FFFDany3rIgaUuNrhIXMdvzugxPxjdFSeEbAcagnLlLTf89EFT+dyUvqLAZ539vh2eVuUv8RMxuv8n41d6k9Q2o3kJookgZOzytEnzqJkALOxCxkceqQ6B9iECx3mLEw9VRUQvp7+R1jCkGwsmXK0tSfwARuw/1T47KsiCpSG4HUSG0FUi+D1Ehtx6JXTJCakBqp7ViWOiI1UiO1GTwnUhaQ2kHqKWTE9rwGUst86yDYiUkuUmPT7QSpkdoOHGq8DFJ7Sr0i2yKrJfJg1W3JOFbzsQVg241knLAWKa03w7BZU+XG7tX6v3VgJSGVx4f+5OGRapZD99aHdWSlQCq59Lk11Wzsu354IttYKZLGun9T8xz+NOTUfT/ansMD65DK5pJ6Q7Xqxr7PqbPX8eeqs+uHSuhUhkvqoavS6uf42me/AUPZ2IMLfWkDAAAAAElFTkSuQmCC) no-repeat center;
+    background-size: 100% 100%;
+}
+
+.coupon-modal .list:last-child {
+    margin-bottom: 0;
+}
+
+.coupon-modal .list .p {
+    color: #666;
+}
+
+.coupon-modal .list .em {
+    display: block;
+    line-height: 50rpx;
+}
+
+.coupon-modal .list .title {
+    line-height: 28rpx;
+    margin-bottom: 16rpx;
+}
+
+.coupon-modal .list .left {
+    width: 314rpx;
+    flex: 0 auto;
+    position: relative;
+}
+
+.coupon-modal .list .left .em {
+    font-family: PingFang-SC-Medium;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+    color: #333;
+}
+
+.coupon-modal .list .right {
+    width: 194rpx;
+    text-align: center;
+    padding-left: 28rpx;
+}
+
+.coupon-modal .list .right .em {
+    color: #ff2b00;
+}
+
+.coupon-modal .list .right .price {
+    color: #fe6722;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    margin-bottom: 6rpx;
+    margin-top: -4rpx;
+}
+
+.coupon-modal .list .right .condition {
+    color: #666;
+    white-space: nowrap;
+}
+
+.coupon-modal .tip {
+    color: #890019;
+    line-height: 90rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAAY1BMVEUAAACJABmJABqJABqKABmKABqJABqJABuMAByMAByNABqMACGLAC6KABqKABqJABnlGD6KABmRAhzcFjqkByObBSDgFzzXFDjPEjXFEDGwCymNARqpCCW8Di67Di27DS26DSyVVsX1AAAAD3RSTlMA8vfZv6Scc1JJMR8Lrq8ZDbmFAAABCklEQVQ4y4WU27KDIAxFQZCixQbwrj2X///KlrQKVCzrRYZZo9uQQAKUFJxRyriQiqSomwJ2iqY+CNfSQIQpr7FRUThAq9C4QJJLZGScCk6p3knpuUJfmUv4Qon1MN8U4+pzgyS2W/HZEKKKpNEPurVYZ0Vk+h2t1vqOS0lEMsGkn/S4FoSnlH9n/AHCCUsYnTMmAwgjdNtux85H1RgWobvi8i24WkcfBJXtQ4Pb/3WrWaO9wfa4d+2YV1jwCTvc/3Q3YEiMOq5eEUHp+la/GXrwyPAALObEsnoKFR2jndD4gYDmoxnMjDWLmuHQUss420NL5Rsz3975IcmPWn5g82MfU9/OLo/8FfQA3Oo2WDidNiMAAAAASUVORK5CYII=) no-repeat 150rpx center #e5183e;
+    background-size: 34rpx 34rpx;
+    border-bottom-left-radius: 40rpx;
+    border-bottom-right-radius: 40rpx;
+    text-indent: 60rpx;
+    text-align: center;
+    margin-top: -4rpx;
+    width: 598rpx;
+}
+
+.coupon-modal .tip.coupon-record-tips {
+    background-image: none;
+    height: 90rpx;
+}
+
+.coupon-modal .coupon-date {
+    color: #ff8d5a!important;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.coupon-modal .coupon-date::before {
+    content: "";
+    display: inline-block;
+    width: 24rpx;
+    height: 24rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAnlJREFUSA21Vk9PE1EQn3m7rZroB7BRLlXiXeOHEKPtxQM0MXqnEQzGm3ojEtDUmwcNsXClmvAtPHowhsYLwQ9QEwW7O/5m3r4N6lY20E4C+/a9md9vdt78KdN/RDpzFyih2yQ0QyJ1YqqZutAeMffxvk0Rvef2xu4oGC46kFf3a3Tw8xkA7gE8KtLJ9xguCL2l6uknPP9mL9/PFv8QyMvWLUqkSyTn4OUveN7Ds0fV6CPxWQ8g3+FAcg1nDZw18KwQ8YAibvGD7ofDJH8QyOpsG4ovAO5guEVxvMTt9f5hg7/X0rlbp+FwBSRN2KawXeCHm52glxOY52naI2EB+GNe7K4EpTJPWWstgWTZdCNuhi8xAh/z/c8+LO7RKHBZm92Gl8KLGzeLSD1J+tzCVT11Re/EmaJeqI/51ihw0xO6AS9nisB1z2w1tIplmETOUlGzRS8UMR9lXHpfMRQLmIrtsjyP4FnvqAstQ2IYmnma3qghZ0WklpqK45KAhQIFASpURfN8XBKwgB1b+QuQQxGVIEG97JgaI6VVRFJytMoLm6/t/Uz8jfaHwKSazyLbLfOPP2Va+tV1AF+yP6Jp1Ob1IoQYd6DlDwWUP9GXIqV87+Llq7S7M5W/h0WFE55/9zW80o/heVsDGyHiPryYtt5yBAHfeXoAQx+eHK1goX1KBdjoOWi5Ktq4xiUBC9hO+zlIErA1rHGdkMQwtMMqJrCdDQvt59pytSueVHxnreiMUGyfRRgWCNgAJE1rWMckyTqqtu2BDiCFMQKbRBgWOEhBsnwckgwc7RoYOniy6ZbPA2Wb6MBRApWJjkxPAZJJDv1AYl8zhp8tvwFtQUHZcbKKAAAAAABJRU5ErkJggg==);
+    background-size: 100% 100%;
+    margin-right: 4rpx;
+}

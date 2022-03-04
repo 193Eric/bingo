@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "toggle": "../../../Toggle/index",
+        "check-box": "../../../CheckBox/index",
+        "stepper": "../Stepper/index",
+        "price": "../Price/index"
+    }
+}

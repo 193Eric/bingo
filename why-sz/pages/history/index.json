@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "xft-empty": "../../miniprogram_npm/xft-weapp/empty/index"
+    },
+    "navigationBarTitleText": "历史记录",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom"
+}

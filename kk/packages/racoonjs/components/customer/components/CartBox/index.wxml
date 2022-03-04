@@ -1,0 +1,73 @@
+<template name="renderScanTipsDialog">
+    <dialog compid="{{$compid__128}}">是否继续扫条形码?</dialog>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!$cart||!$cart.cartBox}}"></view>
+    <view wx:else>
+        <view class="new_cart_icon_empty" id="new_cart_icon_empty" wx:if="{{!isShowScan&&totalCount===0}}"></view>
+        <dialog compid="{{$compid__129}}"></dialog>
+        <dialog compid="{{$compid__130}}">
+            <view>该商品已过期，请勿购买！</view>
+            <view>已安排店主回收过期商品，造成不便，请谅解</view>
+        </dialog>
+        <template is="renderScanTipsDialog" data="{{...anonymousState__temp}}"></template>
+        <modal compid="{{$compid__131}}">
+            <view class="expired_container">
+                <view class="expired_title">如何检查有效期</view>
+                <view class="expired_words">请在商品外包装查看生产日期（生产日期喷码通常在商标处或包装封口处，瓶装或灌装产品则在瓶盖或包装底部）、保质期，即可检查商品是否过期，示例：</view>
+                <image class="expired_img" src="{{IMG_expired_example}}"></image>
+                <view bindtap="anonymousFunc7" class="expired_btn has_scale_top_border">我知道了</view>
+            </view>
+        </modal>
+        <bottom-sheet compid="{{$compid__132}}">
+            <cart-open compid="{{$compid__133}}"></cart-open>
+        </bottom-sheet>
+        <toggle compid="{{$compid__134}}">
+            <view bindtap="scanQRCode" class="{{'fixed_scan_bar js_scan_bar '+(isScrollFlag?'scroll-hidden':'')}}" data-e-tap-so="this" id="fixed_scan_bar">
+                <text class="fixed_scan_word js_scan_bar">扫条形码</text>
+            </view>
+        </toggle>
+        <toggle compid="{{$compid__135}}">
+            <view class="{{'cart_ui_box '+(isScrollFlag?'scroll-hidden':'')}}">
+                <view class="cart_ui_wrap clearfix">
+                    <view bindtap="toggleCartOpen" class="cart_left">
+                        <view class="{{'new_cart_icon '+cartIconActiveClass}}" id="new_cart_icon">
+                            <view class="{{'cart_product_num '+(totalCount>=10?'cart_product_num_two':'')}}">{{totalCount}}</view>
+                        </view>
+                    </view>
+                    <view class="cart_right">
+                        <text bindtap="jumpCartPage" class="cart_to_pay" data-e-tap-so="this">去支付</text>
+                    </view>
+                    <view class="{{'center_scan_btn_box '+(!isOpenCart&&totalCount>0&&isShowScan?'':'hide')}}" wx:if="{{isShowScan}}">
+                        <view class="center_scan_btn js_scan_bar">
+                            <view bindtap="scanQRCode" class="circle_ js_scan_bar" data-e-tap-so="this">
+                                <text class="scan_icon_ js_scan_bar"></text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="cart_center">
+                        <view class="cart_center_top">
+                            <view class="final_total_price_box">
+                                <price compid="{{$compid__136}}"></price>
+                            </view>
+                        </view>
+                        <view class="cart_center_bot">
+                            <view class="preferential_tips">
+                                <view class="preferential-price" wx:if="{{preferentialPrice>0}}">已减{{' '}}
+                                        <price compid="{{$compid__137}}"></price>
+                                </view>
+                                <view class="unsatisfied-coupon-content" wx:if="{{unsatisfiedCoupon}}">还差
+                                        <price compid="{{$compid__138}}"></price>
+                                    <text wx:if="{{unsatisfiedCoupon.discount}}"> 可打{{unsatisfiedCoupon.discount}}折</text>
+                                    <block wx:if="{{!unsatisfiedCoupon.discount}}">{{' '}}可减
+                                                <price compid="{{$compid__139}}"></price>
+                                    </block>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </toggle>
+    </view>
+</block>

@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "get-code": "../../../packages/racoonjs/components/GetCode/index",
+        "toggle": "../../../packages/racoonjs/components/Toggle/index",
+        "pay-password": "../../../packages/racoonjs/components/PayPassword/index",
+        "number-keyboard": "../../../packages/racoonjs/components/NumberKeyboard/index"
+    },
+    "navigationBarTitleText": "修改密码"
+}

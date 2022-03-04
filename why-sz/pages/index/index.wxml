@@ -1,0 +1,103 @@
+<view class="index">
+    <view class="index-banner">
+        <image src="https://file.91xft.cn:9002/static/whyStatic/banner.png"></image>
+    </view>
+    <view class="index-content" wx:if="{{step===0}}">
+        <view class="index-content__title">
+            <image src="../../assets/images/01@2x.png"></image>选择门店
+    </view>
+        <view class="index-content__step">
+            <xft-slider disabled useButtonSlot activeColor="#0237FF" bind:drag="onDrag" value="{{currentValue}}">
+                <view class="custom-button" slot="button"></view>
+            </xft-slider>
+        </view>
+        <view class="index-content__step__tips">
+            <image src="../../assets/images/step_1.png"></image>
+        </view>
+        <view class="content" wx:if="{{shopList.length>0}}">
+            <slider duration="{{'500'}}" height="{{'475rpx'}}" nextMargin="{{'300rpx'}}" previousMargin="{{'30rpx'}}" style="margin:0" thing="{{shopList}}">
+                <view class="content-item" data-index="{{i}}" slot="slot-{{i}}" wx:for="{{shopList}}" wx:for-index="i" wx:key="i">
+                    <button bindgetphonenumber="getPhoneNumber" bindtap="{{form.mobile&&item.queue_state==0?'selectShop':'selectTips'}}" data-code="{{item.code}}" data-queue_state="{{item.queue_state}}" openType="{{!form.mobile?'getPhoneNumber':''}}">
+                        <view class="content-item__logo">
+                            <image src="{{item.head_image}}"></image>
+                        </view>
+                        <view class="content-item__append">营业时间 {{item.opening_time}}-{{filter.nextDay(item.opening_time,item.closing_time)}}</view>
+                        <view class="content-item__body">
+                            <view class="body-title">{{item.store_name}}
+              <view class="body-site">
+                                    <image src="../../assets/images/icon_address@2x.png"></image>  {{filter.limitNum(item.distance/1000,2)}}km
+              </view>
+                            </view>
+                            <view class="body-address">{{filter.limitLength(item.address,12)}}</view>
+                            <view class="body-now">
+                                <image src="../../assets/images/ic_line.png"></image>
+                                <block wx:if="{{item.queue_state==0}}">
+            {{filter.limitLength(item.wait_nums,3)}}个号正在排队
+            </block>
+                                <block wx:if="{{item.queue_state==1}}">
+            暂停取号
+            </block>
+                                <block wx:if="{{item.queue_state==2}}">
+              暂停线上取号
+            </block>
+                            </view>
+                        </view>
+                    </button>
+                </view>
+            </slider>
+        </view>
+        <view class="content" wx:if="{{shopList.length==0}}">
+            <view class="queue-none">
+                <image src="../../assets/images/queue-none.png"></image>
+                <view>当前地区暂未开放，敬请期待</view>
+            </view>
+        </view>
+    </view>
+    <view class="index-content" wx:if="{{step===1}}">
+        <view class="index-content__title">
+            <image src="../../assets/images/02@2x.png"></image>填写信息
+    </view>
+        <view class="index-content__step">
+            <xft-slider disabled useButtonSlot activeColor="#0237FF" bind:drag="onDrag" value="{{currentValue}}">
+                <view class="custom-button" slot="button"></view>
+            </xft-slider>
+        </view>
+        <view class="index-content__step__tips">
+            <image src="../../assets/images/step_2.png"></image>
+        </view>
+        <view class="index-content__slider">
+            <view class="tips">
+                <image src="../../assets/images/iconfontxiaogantanhao-2@2x.png"></image>请根据您的目的地选择要取号的队列
+      </view>
+            <slider nextMargin="{{nextMargin}}" style="margin:0;height:180rpx" thing="{{queueList}}">
+                <view bindtap="selectBind" class="slider-item" data-code="{{item.queue_code}}" data-default_num="{{item.default_num}}" data-index="{{i}}" data-max_people="{{item.max_people}}" data-min_people="{{item.min_people}}" slot="slot-{{i}}" wx:for="{{queueList}}" wx:for-index="i">
+                    <view class="slider-item__title">{{item.queue_name}}</view>
+                    <view class="slider-item__info {{selectItem===i?'slider-item__info-select':''}}">前方还有{{filter.limitLength(item.need_wait_num,3)}}个号在排队
+          </view>
+                    <image src="../../assets/images/qu_selected.png" wx:if="{{selectItem===i}}"></image>
+                    <image class="img-icon" src="../../assets/images/duihao-2@2x.png" wx:if="{{selectItem===i}}"></image>
+                    <image src="../../assets/images/qu.png" wx:if="{{selectItem!==i}}"></image>
+                </view>
+            </slider>
+        </view>
+        <view class="index-content__form">
+            <view class="content-field">
+                <span>
+                    <image src="../../assets/images/ic_people.png"></image>
+        输入人数</span>
+                <input bindinput="onTextInput" class="input" data-field="diners_num" disabled="{{default_num>0}}" name="userName" placeholder="{{min_people+'-'+max_people}}" placeholderClass="phcolor" type="number" value="{{default_num?default_num:form.diners_num}}"></input>
+            </view>
+            <view class="content-field">
+                <span>
+                    <image src="../../assets/images/ic_tel.png"></image>
+        联系电话</span>
+                <input bindinput="onTextInput" class="input" data-field="mobile" name="userName" placeholder="请填写联系电话" placeholderClass="phcolor" type="number" value="{{form.mobile}}"></input>
+            </view>
+            <view class="content-confirm">
+                <view bindtap="sendQueue" class="{{form.mobile&&form.diners_num?'can-confirm':''}}">确认</view>
+                <image bindtap="handleBack" src="../../assets/images/fanhui-9@2x.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="filter" src="../../utils/filter.wxs" />

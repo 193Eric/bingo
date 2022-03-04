@@ -1,0 +1,16 @@
+.react-price,.react-price text,.react-price view {
+    display: inline;
+}
+
+.react-price__unit {
+    padding-right: 4rpx;
+}
+
+.react-price__type_9 .react-price__value {
+    font-size: 30rpx!important;
+}
+
+.react-price__type_9 .react-price__typeName {
+    padding-left: 6rpx;
+    font-size: 24rpx!important;
+}

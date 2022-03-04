@@ -1,0 +1,99 @@
+<view class="order">
+    <view class="order-detail">
+        <view class="order-title" style="margin-top:{{marginTop}}">
+            <view bindtap="goBack">
+                <image class="home-back" src="../../assets/images/order/home-back.png" wx:if="{{from=='notice'}}"></image>
+                <image src="../../assets/images/order/fanhui-2@2x.png" wx:if="{{from!='notice'}}"></image>
+            </view>
+      订单详情
+    </view>
+        <view class="order-detail__div">
+            <view class="div-title">
+                <image src="../../assets/images/ic_tips2.png"></image>
+                <span>到号后需出示排队信息，截图无效</span>
+            </view>
+            <view class="div-code">
+                <image src="../../assets/images/order/chenggong-3@2x.png" wx:if="{{orderDetail.queue_order_state==1}}"></image>
+                <image src="../../assets/images/order/one.png" wx:if="{{orderDetail.queue_order_state==2}}"></image>
+                <image src="../../assets/images/order/cancel.png" wx:if="{{orderDetail.queue_order_state==3}}"></image>
+                <image src="../../assets/images/order/mian.png" wx:if="{{orderDetail.queue_order_state==4}}"></image>
+                <span>{{orderDetail.queue_order_state_str}}</span>
+            </view>
+            <view class="div-info">
+        {{filter.getQueueInfo(orderDetail.queue_order_state)}}
+      </view>
+            <view class="card">
+                <view class="card-title {{orderDetail.queue_order_state==3||orderDetail.queue_order_state==4?'black':''}}">
+          {{orderDetail.store_name}}</view>
+                <view class="card-num">
+                    <span class="{{orderDetail.queue_order_state==3||orderDetail.queue_order_state==4?'grey':''}}"> {{orderDetail.queue_order_code}}</span>
+                    <view class="card-num-append">
+            ( {{orderDetail.queue_name}} )
+          </view>
+                </view>
+                <view class="card-message">
+                    <view class="card-message__div">
+                        <view>{{orderDetail.wait_num}}桌</view>
+                        <view>前方排队</view>
+                    </view>
+                    <view class="card-message__div">
+                        <view>{{orderDetail.diners_num}}人</view>
+                        <view>用餐人数</view>
+                    </view>
+                </view>
+                <view class="card-message__bottom">
+                    <view>
+                        <view>
+              联系电话
+            </view>
+                        <view>
+              {{orderDetail.mobile}}
+            </view>
+                    </view>
+                    <view>
+                        <view>
+              下单时间
+            </view>
+                        <view>
+              {{filter.deleteT(orderDetail.created_at)}}
+            </view>
+                    </view>
+                    <view class="myorder-card__item">
+                        <view>门店地址</view>
+                        <view>{{orderDetail.store_address}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="order-detail__append">
+            <view style="overflow:hidden">
+                <view class="append-tips {{orderDetail.queue_order_state==3||orderDetail.queue_order_state==4?'grey':''}}">
+                    <image src="../../assets/images/iconfontxiaogantanhao-2@2x.png" wx:if="{{orderDetail.queue_order_state==1||orderDetail.queue_order_state==2}}"></image>
+                    <image src="../../assets/images/iconfontxiaogantanhao-2@2x.png" wx:if="{{orderDetail.queue_order_state==3||orderDetail.queue_order_state==4}}"></image>
+          温馨提示：
+        </view>
+            </view>
+            <view class="append-detail {{orderDetail.queue_order_state==3||orderDetail.queue_order_state==4?'grey':''}}">
+                <view>① 取号后，请提前到达现场有序排队入场，到号后30分钟内有效，截图无效；</view>
+                <view>② 到号后需与主入口处工作人员换取纸质票，凭纸质票入场就餐；</view>
+                <view>③ 如果您的排队订单已到号，但您的朋友还未到场，您可先行就坐
+点餐，待朋友到场后，再根据场内提示在【绿色通道】处接人入座。</view>
+            </view>
+            <view bindtap="callPhone" class="append-li {{orderDetail.queue_order_state==3||orderDetail.queue_order_state==4?'grey':''}}" data-phone="{{orderDetail.service_tel}}">
+                <block wx:if="{{orderDetail.service_tel_state==0}}">
+                    <image src="../../assets/images/ic_tips_2.png"></image>
+        联系客服：{{orderDetail.service_tel}}
+          </block>
+            </view>
+        </view>
+        <view class="bottom">
+            <view bindtap="handlerCancel" class="bottom-btn" data-id="{{orderDetail.id}}" wx:if="{{orderDetail.queue_order_state==1}}">
+          取消排队
+        </view>
+            <view bindtap="handlerReapply" class="bottom-btn" data-id="{{orderDetail.id}}" wx:if="{{orderDetail.queue_order_state==3||orderDetail.queue_order_state==4}}">
+          重新取号
+        </view>
+        </view>
+    </view>
+</view>
+<wxs module="filter" src="../../utils/filter.wxs" />

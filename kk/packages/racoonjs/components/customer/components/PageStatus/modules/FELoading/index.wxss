@@ -1,0 +1,213 @@
+@-webkit-keyframes object_big {
+    50% {
+        -webkit-transform: scale(.5);
+    }
+}
+
+@keyframes object_big {
+    50% {
+        transform: scale(.5);
+    }
+}
+
+@-webkit-keyframes object_one {
+    50% {
+        -webkit-transform: translate(-130rpx,-130rpx);
+    }
+}
+
+@keyframes object_one {
+    50% {
+        transform: translate(-130rpx,-130rpx);
+    }
+}
+
+@-webkit-keyframes object_two {
+    50% {
+        -webkit-transform: translate(0,-130rpx);
+    }
+}
+
+@keyframes object_two {
+    50% {
+        transform: translate(0,-130rpx);
+    }
+}
+
+@-webkit-keyframes object_three {
+    50% {
+        -webkit-transform: translate(130rpx,-130rpx);
+    }
+}
+
+@keyframes object_three {
+    50% {
+        transform: translate(130rpx,-130rpx);
+    }
+}
+
+@-webkit-keyframes object_four {
+    50% {
+        -webkit-transform: translate(130rpx,0);
+    }
+}
+
+@keyframes object_four {
+    50% {
+        transform: translate(130rpx,0);
+    }
+}
+
+@-webkit-keyframes object_five {
+    50% {
+        -webkit-transform: translate(130rpx,130rpx);
+    }
+}
+
+@keyframes object_five {
+    50% {
+        transform: translate(130rpx,130rpx);
+    }
+}
+
+@-webkit-keyframes object_six {
+    50% {
+        -webkit-transform: translate(0,130rpx);
+    }
+}
+
+@keyframes object_six {
+    50% {
+        transform: translate(0,130rpx);
+    }
+}
+
+@-webkit-keyframes object_seven {
+    50% {
+        -webkit-transform: translate(-130rpx,130rpx);
+    }
+}
+
+@keyframes object_seven {
+    50% {
+        transform: translate(-130rpx,130rpx);
+    }
+}
+
+@-webkit-keyframes object_eight {
+    50% {
+        -webkit-transform: translate(-130rpx,0);
+    }
+}
+
+@keyframes object_eight {
+    50% {
+        transform: translate(-130rpx,0);
+    }
+}
+
+.fe-loading {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    z-index: 998;
+}
+
+.fe-loading-center {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.fe-loading-center-absolute {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    height: 300rpx;
+    width: 300rpx;
+    margin-top: -150rpx;
+    margin-left: -150rpx;
+    transform: rotate(45deg);
+}
+
+.object {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #f5a623;
+    position: absolute;
+    left: 130rpx;
+    top: 130rpx;
+    border-radius: 50% 50% 50% 50%;
+}
+
+.object:nth-child(2n+0) {
+    margin-right: 0;
+}
+
+.object_one {
+    animation: object_one 2s infinite;
+    animation-delay: .2s;
+}
+
+.object_two {
+    animation: object_two 2s infinite;
+    animation-delay: .3s;
+}
+
+.object_three {
+    animation: object_three 2s infinite;
+    animation-delay: .4s;
+}
+
+.object_four {
+    animation: object_four 2s infinite;
+    animation-delay: .5s;
+}
+
+.object_five {
+    animation: object_five 2s infinite;
+    animation-delay: .6s;
+}
+
+.object_six {
+    animation: object_six 2s infinite;
+    animation-delay: .7s;
+}
+
+.object_seven {
+    animation: object_seven 2s infinite;
+    animation-delay: .8s;
+}
+
+.object_eight {
+    animation: object_eight 2s infinite;
+    animation-delay: .9s;
+}
+
+.object_big {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    left: 100rpx;
+    top: 100rpx;
+    animation: object_big 2s infinite;
+    animation-delay: .5s;
+}
+
+.three_click_remind {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    margin-top: 1rem;
+    font-size: 28rpx;
+}
+
+.three_click_remind .remind_tips {
+    font-size: 28rpx;
+    text-align: center;
+    color: #999;
+    line-height: 1.5;
+}

@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "toggle": "../../components/Toggle/index"
+    }
+}

@@ -1,0 +1,147 @@
+<template name="renderCounterDiscountCard">
+    <discount-card compid="{{$compid__297}}" id="cbhzz" wx:if="{{isCounter}}"></discount-card>
+</template>
+<template name="renderActivityModal">
+    <modal compid="{{$compid__296}}">
+        <view>
+            <image bindload="anonymousFunc5" mode="widthFix" src="https://qn-cdn-pic.feng1.com/pop_shara_bg.png" style="{{anonymousState__temp12}}"></image>
+        </view>
+    </modal>
+</template>
+<template name="renderOrderOrderModal">
+    <modal compid="{{$compid__295}}">
+        <view bindtap="anonymousFunc2" class="activity-order-modal" style="{{anonymousState__temp10}}">
+            <view class="title">第 <text class="text">{{orderReward&&orderReward.orderSerial}}</text> 位下单的幸运儿</view>
+            <view class="info">恭喜获得 <text class="text">{{orderReward&&orderReward.prizeName}}</text>
+            </view>
+            <view class="info prize-img">
+                <image bindload="anonymousFunc3" mode="widthFix" src="{{prizePic}}" style="{{anonymousState__temp11}}" wx:if="{{prizePic}}"></image>
+            </view>
+            <view class="btn">查看我的奖品</view>
+        </view>
+    </modal>
+</template>
+<template name="renderLoading">
+    <view class="loading_box">
+        <view class="loading_icon"></view>
+        <view class="loading_text">{{prefix}}{{isMachineShelf?'疯狂出货中...':'疯狂加载中...'}}</view>
+    </view>
+</template>
+<template name="renderAdv">
+    <bottom-banner compid="{{$compid__294}}" wx:if="{{isShow}}"></bottom-banner>
+</template>
+<template name="renderFollow">
+    <view wx:if="{{anonymousState__temp20}}"></view>
+    <view class="code" wx:if="{{isShowCode}}">
+        <image bindtap="anonymousFunc0" class="img" mode="widthFix" src="{{url}}"></image>
+    </view>
+</template>
+<template name="renderContent">
+    <view class="main">
+        <template is="renderMachineOrderList" data="{{...anonymousState__temp7}}" wx:if="{{isMachineShelf}}"></template>
+        <template is="renderOrderList" data="{{...anonymousState__temp8}}" wx:else></template>
+        <collect-card compid="{{$compid__287}}"></collect-card>
+        <upgrade-package compid="{{$compid__288}}" wx:if="{{showActivityType==1}}"></upgrade-package>
+        <view class="adv-padding" wx:if="{{showActivityType==1.1}}">
+            <task-card compid="{{$compid__289}}"></task-card>
+        </view>
+        <activity-config-portal compid="{{$compid__290}}"></activity-config-portal>
+        <activity-1 compid="{{$compid__291}}" wx:if="{{showActivityType==3}}"></activity-1>
+        <activity-2 compid="{{$compid__292}}" wx:if="{{isWeixinChannel}}"></activity-2>
+        <manage-code compid="{{$compid__293}}"></manage-code>
+    </view>
+</template>
+<template name="renderMachineOrderList">
+    <view class="view-order-list">
+        <view class="order-list-wrapper">
+            <view class="order-machine-item-list order-success-item-list" wx:if="{{successList.length>0}}">
+                <view class="h6">出货成功</view>
+                <view class="ul order-list-container">
+                    <product-list compid="{{$compid__285}}"></product-list>
+                </view>
+            </view>
+            <view class="order-machine-item-list order-failed-item-list" wx:if="{{failedList.length>0}}">
+                <view class="h6">出货失败
+                            <view class="refund-price">退款¥{{faildTotalAmount}}元</view>
+                </view>
+                <view class="ul order-list-container">
+                    <product-list compid="{{$compid__286}}"></product-list>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderOrderMetaRow">
+    <view class="order-meta-row" wx:if="{{isShowThisRow}}">
+        <view class="order-meta-row__label">{{label}}</view>
+        <view class="order-meta-row__value">{{isDiscount?'-¥'+value:'¥'+value}}</view>
+    </view>
+</template>
+<template name="renderOrderMeta">
+    <view class="{{'order-meta '+(isShowProductList?'':'none')}}">
+        <view class="order-meta-row left-style">
+            <view class="order-meta-row__label">订单编码</view>
+            <view class="order-meta-row__value">{{orderId}}</view>
+            <view class="order-meta-row__action">
+                <button bindtap="copyOrderId">复制</button>
+            </view>
+        </view>
+        <template is="renderOrderMetaRow" data="{{...anonymousState__temp2}}"></template>
+        <template is="renderOrderMetaRow" data="{{...anonymousState__temp3}}"></template>
+        <view class="line" wx:if="{{isShowLine}}"></view>
+        <template is="renderOrderMetaRow" data="{{...anonymousState__temp4}}"></template>
+        <template is="renderOrderMetaRow" data="{{...anonymousState__temp5}}"></template>
+        <template is="renderOrderMetaRow" data="{{...anonymousState__temp6}}"></template>
+    </view>
+</template>
+<template name="renderOrderList">
+    <view class="view-order-list">
+        <view bindtap="onClickToggleProduct" class="{{'p title '+(isShowProductList?'up':'')}}" data-e-tap-so="this">查看订单 <text class="iconfont iconjiantou"></text>{{' '}}</view>
+        <view class="{{'order-list-wrapper '+(isShowProductList?'':'none')}}">
+            <view class="h6">请确认以下商品</view>
+            <view class="ul order-list-container">
+                <product-list compid="{{$compid__284}}"></product-list>
+            </view>
+        </view>
+        <template is="renderOrderMeta" data="{{...anonymousState__temp}}"></template>
+    </view>
+</template>
+<template name="renderHeader">
+    <view class="header">
+        <view class="pay-info-wrapper">
+            <view class="pay-info-container">
+                <view class="pay-status-info clearfix">
+                    <view class="img-container"></view>
+                    <view class="des">
+                        <view class="p success">支付成功</view>
+                        <view class="p totalPrice">
+                            <price compid="{{$compid__281}}"></price>
+                        </view>
+                    </view>
+                </view>
+                <view class="p discount-score">
+                    <view class="span" wx:if="{{totalDiscountAmount>0}}">已优惠
+                                <price compid="{{$compid__282}}"></price>
+                    </view>
+                    <text class="discount" wx:if="{{integral>0}}">获得{{integral}}积分</text>
+                </view>
+            </view>
+        </view>
+        <coupon-list compid="{{$compid__283}}"></coupon-list>
+    </view>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view class="{{pageClass}}" wx:if="{{loading}}">
+        <template is="renderLoading" data="{{..._$_$anonymousState__temp}}"></template>
+    </view>
+    <view class="{{pageClass}}" wx:else>
+        <template is="renderHeader" data="{{...anonymousState__temp14}}"></template>
+        <template is="renderContent" data="{{...anonymousState__temp15}}"></template>
+        <template is="renderFollow" data="{{...anonymousState__temp16}}"></template>
+        <template is="renderAdv" data="{{...anonymousState__temp17}}"></template>
+        <template is="renderActivityModal" data="{{...anonymousState__temp18}}"></template>
+        <template is="renderOrderOrderModal" data="{{...anonymousState__temp19}}"></template>
+        <footer-action-bar compid="{{$compid__298}}"></footer-action-bar>
+        <view class="iphone-x-fix-white-padding"></view>
+    </view>
+</block>

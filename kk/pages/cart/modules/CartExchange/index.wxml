@@ -1,0 +1,22 @@
+<template name="renderProductItem">
+    <view bindtap="funPrivatebgezz" class="cart-exchange-product" data-e-tap-a-a="{{product}}" data-e-tap-so="this">
+        <image class="img" src="{{imagePath}}"></image>
+        <view class="meta">
+            <view class="product-name">{{shortName}}</view>
+            <view class="exchange-price">
+                <price compid="{{$compid__211}}"></price>
+            </view>
+            <view class="sale-price">
+                <price compid="{{$compid__212}}"></price>
+            </view>
+        </view>
+        <view class="cart-icon"></view>
+    </view>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view class="cart-exchange-product-list" wx:if="{{exchangeProductList.length>0}}">
+        <template is="renderProductItem" data="{{...product[$loopState__temp2]}}" wx:for="{{loopArray46}}" wx:for-index="_anonIdx2" wx:for-item="product"></template>
+        <view class="paddingRight"></view>
+    </view>
+    <view wx:else></view>
+</block>

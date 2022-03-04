@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "bottom-sheet": "../../../../packages/racoonjs/components/customer/components/BottomSheet/index"
+    }
+}

@@ -1,0 +1,47 @@
+<template name="renderType3">
+    <view class="type_3">
+        <view class="type_3_ul clearfix">
+            <block wx:if="{{finalContentDetails}}">
+                <view bindtap="onJumpUrl" class="li item" data-e-tap-a-a="{{item}}" data-e-tap-so="this" wx:for="{{finalContentDetails}}" wx:for-index="_anonIdx4" wx:key="detailValue">
+                    <image bindload="onImageLoad" class="item_img" data-e-load-so="this" src="{{item.detailValue}}"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+<template name="renderType2">
+    <view class="type_2 clearfix">
+        <view class="type_2_left">
+            <view bindtap="onJumpUrl" class="li item" data-e-tap-a-a="{{finalContentDetails[0]}}" data-e-tap-so="this">
+                <image bindload="onImageLoad" class="item_img" data-e-load-so="this" src="{{finalContentDetails[0]&&finalContentDetails[0].detailValue}}"></image>
+            </view>
+        </view>
+        <view class="type_2_right">
+            <view bindtap="onJumpUrl" class="li item" data-e-tap-a-a="{{finalContentDetails[1]}}" data-e-tap-so="this">
+                <image bindload="onImageLoad" class="item_img" data-e-load-so="this" src="{{finalContentDetails[1]&&finalContentDetails[1].detailValue}}"></image>
+            </view>
+            <view bindtap="onJumpUrl" class="li item" data-e-tap-a-a="{{finalContentDetails[2]}}" data-e-tap-so="this">
+                <image bindload="onImageLoad" class="item_img" data-e-load-so="this" src="{{finalContentDetails[2]&&finalContentDetails[2].detailValue}}"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderType1">
+    <view class="type_1">
+        <view class="type_1_ul clearfix">
+            <block wx:if="{{finalContentDetails}}">
+                <view bindtap="onJumpUrl" class="li item" data-e-tap-a-a="{{item}}" data-e-tap-so="this" wx:for="{{finalContentDetails}}" wx:for-index="_anonIdx2" wx:key="detailValue">
+                    <image bindload="onImageLoad" class="item_img" data-e-load-so="this" src="{{item.detailValue}}"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!contentPosition}}"></view>
+    <view class="activity_bit_box" wx:else>
+        <template is="renderType1" data="{{...anonymousState__temp}}" wx:if="{{positionType===1}}"></template>
+        <template is="renderType2" data="{{...anonymousState__temp2}}" wx:if="{{positionType===2}}"></template>
+        <template is="renderType3" data="{{...anonymousState__temp3}}" wx:if="{{positionType===3}}"></template>
+    </view>
+</block>

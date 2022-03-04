@@ -1,0 +1,8 @@
+<block wx:if="{{$taroCompReady}}">
+    <view wx:if="{{!product}}"></view>
+    <product-spike-progress compid="{{$compid__117}}" wx:elif="{{product&&activity&&activity.activityBuyQuantity>-1&&!isInProductCate}}"></product-spike-progress>
+    <view class="product_describe" wx:else>
+        <view class="guess_label" wx:if="{{product&&product.guessLabel&&!isInProductCate}}">{{product.guessLabel}}</view>
+        <view class="interest_label" wx:if="{{product&&product.interestLabel}}">{{product.interestLabel}}</view>
+    </view>
+</block>

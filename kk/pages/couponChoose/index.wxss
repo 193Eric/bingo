@@ -1,0 +1,165 @@
+.coupon-choose-page {
+    padding: 18rpx 24rpx 160rpx;
+    background: #f3f5f7;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.exchange-contaner {
+    width: 100%;
+    padding: 24rpx 28rpx 16rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: #f3f5f7;
+    display: flex;
+}
+
+.exchange-contaner .code-input {
+    flex: 1;
+    height: 80rpx;
+    background: #eee;
+    border-radius: 40rpx;
+    border: 0;
+    padding-left: 46rpx;
+    font-family: PingFang-SC-Regular;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    font-weight: 300;
+    letter-spacing: 0.64rpx;
+    line-height: 80rpx;
+}
+
+.exchange-contaner .code-input::-webkit-input-placeholder {
+    color: #b6b6b6;
+}
+
+.exchange-contaner .code-input::-moz-placeholder {
+    color: #b6b6b6;
+}
+
+.exchange-contaner .code-input::-ms-input-placeholder {
+    color: #b6b6b6;
+}
+
+.exchange-contaner .code-input::placeholder {
+    color: #b6b6b6;
+}
+
+.exchange-contaner .btn {
+    flex: 0 auto;
+    width: 180rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 20rpx;
+    opacity: .8;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #aaa;
+    letter-spacing: 0.64rpx;
+}
+
+.exchange-contaner .btn.active {
+    color: #ff9600;
+}
+
+.coupon-container {
+    padding-top: 108rpx;
+}
+
+.react-price {
+    top: 0!important;
+}
+
+.coupon-value-price {
+    display: inline-block;
+    height: 52rpx;
+    position: relative;
+}
+
+.coupon-value-price,.coupon-value-price .react-price {
+    font-size: 48rpx;
+    line-height: 52rpx;
+    color: #fe6722;
+}
+
+.coupon-value-price .react-price__unit {
+    font-size: 24rpx;
+    color: #fe6722;
+}
+
+.coupon-value-price .react-price__value {
+    font-size: 48rpx;
+    color: #fe6722;
+}
+
+.segmentation-line {
+    color: rgba(77,77,77,.5);
+    font-size: 28rpx;
+    text-align: center;
+    height: 74rpx;
+    line-height: 74rpx;
+    position: relative;
+}
+
+.segmentation-line::after,.segmentation-line::before {
+    content: "";
+    height: 2rpx;
+    width: 224rpx;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ccc;
+}
+
+.segmentation-line::after {
+    right: 0;
+}
+
+.segmentation-line::before {
+    left: 0;
+}
+
+.not_use_coupon_btn_box {
+    position: fixed;
+    width: 100%;
+    height: 128rpx;
+    background: #f3f5f7;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.not_use_coupon_btn_box .not_use_coupon_btn {
+    position: absolute;
+    background: #fabe39;
+    box-shadow: 0 8rpx 16rpx 0 rgba(250,190,57,.3);
+    width: 660rpx;
+    bottom: 20rpx;
+    line-height: 88rpx;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 36rpx;
+    color: #0d0d0d;
+    border-radius: 44rpx;
+}
+
+.popup-product-list-wrapper {
+    background: #fff;
+    border-top-left-radius: 8rpx;
+    border-top-right-radius: 8rpx;
+    padding-bottom: 128rpx;
+    padding-top: 90rpx;
+    min-height: 936rpx;
+    max-height: 1028rpx;
+    overflow-y: auto;
+}
+
+.no-more {
+    color: #999;
+    font-size: 24rpx;
+    text-align: center;
+    padding: 60rpx 0;
+}

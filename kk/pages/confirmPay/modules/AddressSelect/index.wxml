@@ -1,0 +1,50 @@
+<template name="renderAddressType2">
+    <view wx:if="{{!shelfManagerDetail}}"></view>
+    <view class="{{'show_address get_address_container '+(deliveryType==2?'show':'')}}" wx:else>
+        <view class="address_w_box">
+            <view class="address_detail">
+                <text>{{shelfManagerDetail.address}}</text>
+            </view>
+            <view class="contacts_detail">
+                <text class="contacts_name">{{shelfManagerDetail.managerName}}</text>
+                <text class="contacts_phone">{{shelfManagerDetail.mobilePhone}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderNotUserAddress">
+    <view wx:if="{{userAddress}}"></view>
+    <view bindtap="onJumpUrlAddressView" class="no_address_box j_change_address" data-e-tap-so="this" wx:else>
+        <view class="no_address_info">请添加收货地址</view>
+        <view class="change_address_btn"></view>
+    </view>
+</template>
+<template name="renderUserAddress">
+    <view wx:if="{{!userAddress}}"></view>
+    <view bindtap="onJumpUrlAddressView" class="address_w_box-wrapper" data-e-tap-so="this" wx:else>
+        <view class="address_w_icon"></view>
+        <view class="address_w_box">
+            <view class="address_detail">
+                <text class="span">{{userAddress.areaAddress}} {{userAddress.deliveryAddress}}</text>
+            </view>
+            <view class="contacts_detail">
+                <text class="contacts_name">{{userAddress.linkName}}</text>
+                <text class="contacts_phone">{{userAddress.linkPhone}}</text>
+            </view>
+        </view>
+        <view class="change_address_btn j_change_address"></view>
+    </view>
+</template>
+<view class="address_container" wx:if="{{$taroCompReady}}">
+    <view class="address_switch_btn_box">
+        <view class="{{'address_switch_btn_container '+(canDelivery?'':'has-disabled')}}">
+            <text bindtap="setDeliveryType" class="{{'span j_address_btn send_btn '+(deliveryType==1?'selected':'')+' '+(canDelivery?'enable':'disabled')}}" data-e-tap-a-a="{{1}}" data-e-tap-so="this">送货</text>
+            <text bindtap="setDeliveryType" class="{{'span j_address_btn self_get_btn  '+(deliveryType==2?'selected':'')}}" data-e-tap-a-a="{{2}}" data-e-tap-so="this">{{canDelivery?'自提':'仅自提'}}</text>
+        </view>
+        <view class="{{'show_address send_address_container '+(deliveryType==1?'show':'')}}">
+            <template is="renderUserAddress" data="{{...anonymousState__temp}}"></template>
+            <template is="renderNotUserAddress" data="{{...anonymousState__temp2}}" wx:if="{{!currentAddress}}"></template>
+        </view>
+        <template is="renderAddressType2" data="{{...anonymousState__temp3}}"></template>
+    </view>
+</view>

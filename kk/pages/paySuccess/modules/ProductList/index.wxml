@@ -1,0 +1,66 @@
+<template name="renderProductActLabel">
+    <view class="type_label_cart type_label_collectCard" style="{{_$anonymousState__temp}}" wx:if="{{findConfig}}"></view>
+    <view wx:else></view>
+</template>
+<template name="renderCoupon">
+    <view class="coupon">
+        <view class="h4">优惠券</view>
+        <view class="keywords">
+            <text class="no-choosed-coupon change-coupon">暂无可用优惠券</text>
+        </view>
+    </view>
+</template>
+<template name="renderProductRight">
+    <view class="right">
+        <view class="des_price">
+            <price compid="{{$compid__301}}"></price>
+        </view>
+    </view>
+</template>
+<template name="renderProductLeft">
+    <view class="left">
+        <view class="img">
+            <image src="{{productItem.thumbnailsUrl}}"></image>
+            <template is="renderProductActLabel" data="{{...anonymousState__temp11}}"></template>
+        </view>
+        <view class="product-intro">
+            <view class="p">{{productItem.productName}}</view>
+            <view class="pay-price">数量：{{productItem.quantity}}</view>
+        </view>
+    </view>
+</template>
+<template name="renderProductInMachineShelf">
+    <view class="left">
+        <view class="img">
+            <image src="{{productItem.thumbnailsUrl}}"></image>
+        </view>
+        <view class="product-intro">
+            <view class="p">{{productItem.productName}}</view>
+            <view class="des_price">
+                <price compid="{{$compid__299}}"></price>
+                <view class="origin-price" wx:if="{{productItem.discountAmount>0}}">
+                    <price compid="{{$compid__300}}"></price>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="right">
+        <view class="quantity">x{{productItem.quantity}}</view>
+    </view>
+</template>
+<template name="renderProductList">
+    <view class="product-list">
+        <block wx:if="{{data}}">
+            <view class="{{'item '+(isMachineShelfType?'machine-type':'')}}" wx:for="{{loopArray55}}" wx:key="$loopState__temp9">
+                <template is="renderProductInMachineShelf" data="{{...item[$loopState__temp3]}}" wx:if="{{isMachineShelfType}}"></template>
+                <block wx:else>
+                    <template is="renderProductLeft" data="{{...item[$loopState__temp5]}}"></template>
+                    <template is="renderProductRight" data="{{...item[$loopState__temp7]}}"></template>
+                </block>
+            </view>
+        </block>
+    </view>
+</template>
+<view class="{{'product-info '+(className||'')}}" wx:if="{{$taroCompReady}}">
+    <template is="renderProductList" data="{{...anonymousState__temp}}"></template>
+</view>

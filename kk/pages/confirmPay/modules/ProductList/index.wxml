@@ -1,0 +1,36 @@
+<template name="renderProductActLabel">
+    <view class="type_label_cart type_label_collectCard" style="{{_$anonymousState__temp}}" wx:if="{{findConfig}}"></view>
+    <view wx:else></view>
+</template>
+<template name="renderProduct">
+    <view class="product-item">
+        <view class="img">
+            <image class="image-content" src="{{product.imagePath}}"></image>
+            <template is="renderProductActLabel" data="{{...anonymousState__temp5}}"></template>
+        </view>
+        <view class="product-meta">
+            <view class="product-name">{{product.shortName}}</view>
+            <view class="product-number">X{{quantity}}</view>
+        </view>
+        <view class="product-price">
+            <view class="discount-price">
+                <price compid="{{$compid__255}}"></price>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="renderToggleShowAllProductButton">
+    <button bindtap="anonymousFunc0" class="{{buttonClass}}">{{isShowAllProduct?'收起':'展开'+hideProductNumber+'个商品'}}</button>
+</template>
+<template name="renderProductList">
+    <view class="product-list-confirm">
+        <template is="renderProduct" data="{{...item[$loopState__temp4]}}" wx:for="{{loopArray51}}" wx:for-index="_anonIdx2" wx:key="productId"></template>
+    </view>
+</template>
+<view class="product-info" wx:if="{{$taroCompReady}}">
+    <view class="product-info-header has_scale_bot_border">
+        <view class="header_title">已选商品（{{totalCount}}）</view>
+    </view>
+    <template is="renderProductList" data="{{...anonymousState__temp}}"></template>
+    <template is="renderToggleShowAllProductButton" data="{{...anonymousState__temp2}}" wx:if="{{data&&actualCount>DEFAULT_MAX_SHOW_PRODUCT_COUNT}}"></template>
+</view>

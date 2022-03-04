@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "product-describe": "./modules/ProductDescribe",
+        "product-preferential": "./modules/ProductPreferential",
+        "stepper": "../Stepper/index",
+        "toggle": "../../../Toggle/index",
+        "price": "../Price/index"
+    }
+}
