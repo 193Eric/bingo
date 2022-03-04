@@ -1,9 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "star": "../../../../packages/racoonjs/components/customer/components/Star/index",
-        "price": "../../../../packages/racoonjs/components/customer/components/Price/index",
-        "toggle": "../../../../packages/racoonjs/components/Toggle/index",
-        "modal": "../../../../packages/racoonjs/ui/Modal/index"
-    }
-}

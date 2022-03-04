@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "price": "../../../../packages/racoonjs/components/customer/components/Price/index",
-        "stepper": "../../../../packages/racoonjs/components/customer/components/Stepper/index"
-    }
-}

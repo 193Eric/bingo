@@ -1,7 +1,0 @@
-<block wx:if="{{$taroCompReady}}">
-    <view wx:if="{{!data}}"></view>
-    <view wx:elif="{{!memberLevel}}"></view>
-    <view bindtap="jumpMemberBenefits" class="upgrade-package" wx:else>
-        <text class="memberLevel">V{{memberLevel}}</text>
-    </view>
-</block>

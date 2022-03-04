@@ -1,3 +1,0 @@
-<view class="fly_outer" style="{{anonymousState__temp}}" wx:if="{{$taroCompReady}}">
-    <view class="fly_inner" style="{{anonymousState__temp2}}"></view>
-</view>

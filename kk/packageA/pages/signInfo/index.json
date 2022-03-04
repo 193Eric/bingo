@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "dialog": "../../../packages/racoonjs/ui/Dialog/index"
-    },
-    "navigationBarTitleText": "委托代扣​签约"
-}

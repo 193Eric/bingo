@@ -1,6 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "count-down": "../../../../packages/racoonjs/components/customer/components/CountDown/index"
-    }
-}

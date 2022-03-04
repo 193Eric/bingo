@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "dialog": "../../../packages/racoonjs/ui/Dialog/index",
-        "toggle": "../../../packages/racoonjs/components/Toggle/index",
-        "address-item": "./components/AddressItem/index"
-    },
-    "navigationBarTitleText": "我的地址"
-}

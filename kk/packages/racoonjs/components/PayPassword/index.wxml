@@ -1,5 +1,0 @@
-<view class="{{'pay_password_box '+className}}" wx:if="{{$taroCompReady}}">
-    <view class="pay_password_ul clearfix">
-        <view class="{{'pay_password_li '+(liArr[index]?'has_value':'')}}" wx:for="{{defaultLiLen}}" wx:for-item="v" wx:key="index"></view>
-    </view>
-</view>

@@ -1,8 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "toggle": "../../../Toggle/index",
-        "fe-loading": "./modules/FELoading/index",
-        "fe-error": "./modules/FEError/index"
-    }
-}

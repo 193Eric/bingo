@@ -1,8 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "modal": "../../../../packages/racoonjs/ui/Modal/index",
-        "toggle": "../../../../packages/racoonjs/components/Toggle/index",
-        "price": "../../../../packages/racoonjs/components/customer/components/Price/index"
-    }
-}

@@ -1,4 +1,0 @@
-<view class="van-row custom-class" style="{{computed.rootStyle( {gutter:gutter} )}}">
-    <slot></slot>
-</view>
-<wxs module="computed" src="index.wxs" />

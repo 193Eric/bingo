@@ -1,7 +1,0 @@
-{
-    "usingComponents": {
-        "slider": "./../components/slider/index"
-    },
-    "navigationStyle": "custom",
-    "enablePullDownRefresh": true
-}

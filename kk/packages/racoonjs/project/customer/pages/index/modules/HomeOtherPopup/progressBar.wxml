@@ -1,1 +1,0 @@
-<canvas class="{{className}}" height="{{240}}" id="progressBar" style="{{anonymousState__temp}}" type="2d" width="{{240}}" wx:if="{{$taroCompReady}}"></canvas>

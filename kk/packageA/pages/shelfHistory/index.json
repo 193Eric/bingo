@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "custom-tab-bar": "../../../@shared/components/tabBar/index"
-    },
-    "navigationBarTitleText": "丰e足食"
-}

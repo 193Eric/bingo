@@ -1,8 +1,0 @@
-<modal compid="{{$compid__151}}" wx:if="{{$taroCompReady}}">
-    <view class="userinfo_window">
-        <view class="u_title">提示</view>
-        <view class="u_content">系统检测到您在{{platformName}}注册了账号，是否需要同步账号信息？<text bindtap="openFAQPage" class="why_word" data-e-tap-so="this">为什么要关联？</text>
-        </view>
-        <view bindtap="relateUser" class="confirm_btn" data-e-tap-so="this" id="confirm_btn">立即关联</view>
-    </view>
-</modal>

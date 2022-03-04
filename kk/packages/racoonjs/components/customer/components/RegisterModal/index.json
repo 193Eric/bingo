@@ -1,8 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "modal": "../../../../ui/Modal/index",
-        "toggle": "../../../Toggle/index",
-        "coupon-modal": "../../../../project/customer/pages/index/modal/CouponModal/index"
-    }
-}

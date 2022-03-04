@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "toggle": "../../../packages/racoonjs/components/Toggle/index",
-        "cart-more-product-item": "../../../packages/racoonjs/components/customer/components/ProductItem/ProductItemMoreStyle"
-    }
-}

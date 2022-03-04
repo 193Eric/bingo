@@ -1,4 +1,0 @@
-<view bindtap="onClickCheck" class="{{checkboxClassname}}" data-e-tap-so="this" wx:if="{{$taroCompReady}}">
-    <text class="o-icon"></text>
-    <text class="c-checkbox__text" wx:if="{{label}}">{{label}}</text>
-</view>

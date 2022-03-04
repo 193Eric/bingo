@@ -1,3 +1,0 @@
-<view class="{{anonymousState__temp}}" wx:if="{{$taroCompReady}}">
-    <view class="{{'fe-star-item '+(value>index?'fe-star-item__full':'fe-star-item__zero')}}" wx:for="{{starList}}"></view>
-</view>
